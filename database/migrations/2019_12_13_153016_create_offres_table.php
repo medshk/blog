@@ -29,6 +29,7 @@ class CreateOffresTable extends Migration
             $table->enum('statut',['publiee','retiree']);
             $table->string('duree');
             $table->timestamps();
+            //...
         });
     }
 
