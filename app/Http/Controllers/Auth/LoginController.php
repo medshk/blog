@@ -57,7 +57,7 @@ class LoginController extends Controller
 
          if(auth::guard('candidate')->attempt(['email' => $request->email,'password'=> $request->password],$request->get('remember')))
          {
-             //dd(auth::guard('candidate')->check());
+             dd(auth::guard('candidate'));
             return redirect('guest');
         }
             else return "failure";
