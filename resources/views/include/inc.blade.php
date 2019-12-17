@@ -6,6 +6,85 @@
         <div class="logo">
             <a href="index.html" title=""><img class="hidesticky" src="images/resource/logo.png" alt="" /><img class="showsticky" src="images/resource/logo10.png" alt="" /></a>
         </div>
+
+        <!-- if guest-->
+        @guest
+        <div class="btn-extars">
+            <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Poster des emplois</a>
+            <ul class="account-btns">
+                <li class="signup-popup"><a title=""><i class="la la-key"></i> S'inscrire</a></li>
+                <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Connecter</a></li>
+            </ul>
+        </div><!-- Btn Extras -->
+        @endguest
+
+<?php echo auth::guard('candidate')->id(); ?>
+        <!-- if candidate -->
+        @if (auth::guard('candidate')->check())
+            
+        <div class="logo">
+            <a href="index.html" title=""><img src="images/resource/logo.png" alt="" /></a>
+        </div><!-- Logo -->
+        <div class="my-profiles-sec">
+            <span><img src="images/resource/mp1.jpg" alt="" /> Ali TUFAN <i class="la la-bars"></i></span>
+        </div>
+        <div class="wishlist-dropsec">
+            <span><i class="la la-heart"></i><strong>3</strong></span>
+            <div class="wishlist-dropdown">
+                <ul class="scrollbar">
+                    <li>
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l1.png" alt="" /> </div>
+                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
+                                <span>Massimo Artemisis</span>
+                            </div>
+                        </div><!-- Job -->
+                    </li>
+                    <li>
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l2.png" alt="" /> </div>
+                                <h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
+                                <span>StarHealth</span>
+                            </div>
+                        </div><!-- Job -->
+                    </li>
+                    <li>
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l3.png" alt="" /> </div>
+                                <h3><a href="#" title="">Marketing Director</a></h3>
+                                <span>Tix Dog</span>
+                            </div>
+                        </div><!-- Job -->
+                    </li>
+                    <li>
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l4.png" alt="" /> </div>
+                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
+                                <span>Massimo Artemisis</span>
+                            </div>
+                        </div><!-- Job -->
+                    </li>
+                    <li>
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l5.png" alt="" /> </div>
+                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
+                                <span>Massimo Artemisis</span>
+                            </div>
+                        </div><!-- Job -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>alert('hello')</script>
+            
+        @endif
+        <!-- end candidate -->
 <nav>
     <ul>
         <li >

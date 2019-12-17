@@ -16,7 +16,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home',
+Route::get('/tests', function(){
+
+    if(auth::guard('candidate')->check()){
+        echo 'true';
+    }else echo 'false';
+
+});
+
+Route::get('/guest',
 function () {
     return view('pages.guest');
 });
@@ -42,3 +50,15 @@ function () {
     
     return view('pages.offre.offre_view');
 });
+Route::get('/success',
+function () {
+    
+    return view('pages.success');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@show')->name('home');
+Route::post('/register_candidate','Auth\RegisterController@create_candidate')->name('register_candidate');
+Route::post('/register_recruteur','Auth\RegisterController@create_recruteur')->name('register_recruteur');
+Route::post('candidate_login','Auth\LoginController@candidate_login')->name('candidate_login');
+Route::post('recruteur_login','Auth\LoginController@recruteur_login')->name('recruteur_login');

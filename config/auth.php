@@ -41,6 +41,16 @@ return [
             'provider' => 'users',
         ],
 
+        'candidate' => [
+            'driver' => 'session',
+            'provider' => 'candidates',
+        ],
+
+        'recruteur' => [
+            'driver' => 'session',
+            'provider' => 'recruteurs',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -69,6 +79,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'candidates' => [
+            'driver' => 'eloquent',
+            'model' => App\Candidate::class,
+        ],
+
+        'recruteurs' => [
+            'driver' => 'eloquent',
+            'model' => App\Recruteur::class,
         ],
 
         // 'users' => [

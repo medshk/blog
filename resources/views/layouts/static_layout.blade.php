@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/colors/colors.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
+	<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+	<script src="{{asset('js/switching_forms.js?1500')}}" type="text/javascript"></script>
 	
 </head>
 <body>
@@ -142,6 +144,7 @@
 <script src="js/select-chosen.js" type="text/javascript"></script>
 <script src="js/jquery.scrollbar.min.js" type="text/javascript"></script>
 <script src="js/circle-progress.min.js" type="text/javascript"></script>
+
 </body>
 
 

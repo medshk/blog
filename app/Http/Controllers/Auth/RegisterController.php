@@ -7,6 +7,9 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use App\Candidate;
+use App\Recruteur;
 
 class RegisterController extends Controller
 {
@@ -63,10 +66,56 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+       
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+      
     }
+
+    public function create_candidate(Request $request)
+    {
+        $this->validate($request ,[
+            'nom' => ['required', 'string', 'max:15'],
+            'prenom' => ['required', 'string', 'max:15'],
+            'email' => ['required', 'string', 'email', 'max:20'],
+            'password' => ['required', 'string', 'min:8'],
+            'civilite' => 'required',
+             ] );
+            
+         Candidate::create([
+            'civilite' => "Mr",
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'email' =>$request->input('email'),
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect('success');
+    }
+    public function create_recruteur(Request $request)
+    {
+
+        $this->validate($request ,[
+            'nom' => ['required', 'string', 'max:15'],
+            'num_tel' => ['required', 'alphanum', 'max:10'],
+            'email' => ['required', 'string', 'email', 'max:20'],
+            'password' => ['required', 'string', 'min:8'],
+            'type' => 'required',
+             ] );
+
+      Recruteur::create([
+            'nom' => $request['nom'],
+            'type' => $request['type'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'num_tel' => $request['num_tel'],
+        ]);
+        return redirect('success');
+    }
+
+
+   
+
 }
