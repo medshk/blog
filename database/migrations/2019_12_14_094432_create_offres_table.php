@@ -14,7 +14,7 @@ class CreateOffresTable extends Migration
     public function up()
     {
         Schema::create('offres', function (Blueprint $table) {
-            $table->bigIncrements('id')->unique();
+            $table->bigIncrements('id');
             $table->string('intitule');
             $table->enum('type_contract',['stage','cdi','cdd','freelance']);
             $table->string('domaine');
@@ -28,6 +28,8 @@ class CreateOffresTable extends Migration
             $table->date('date_de_debut');
             $table->enum('statut',['publiee','retiree']);
             $table->string('duree');
+            $table->unsignedbigInteger('idRec');
+            $table->foreign('idRec')->references('id')->on('recruteurs');
             $table->timestamps();
            
         });

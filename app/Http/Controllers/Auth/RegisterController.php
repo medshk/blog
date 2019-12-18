@@ -80,7 +80,7 @@ class RegisterController extends Controller
         $this->validate($request ,[
             'nom' => ['required', 'string', 'max:15'],
             'prenom' => ['required', 'string', 'max:15'],
-            'email' => ['required', 'string', 'email', 'max:20'],
+            'email' => ['required', 'string', 'email', 'max:30'],
             'password' => ['required', 'string', 'min:8'],
             'civilite' => 'required',
              ] );
@@ -100,7 +100,7 @@ class RegisterController extends Controller
         $this->validate($request ,[
             'nom' => ['required', 'string', 'max:15'],
             'num_tel' => ['required', 'alphanum', 'max:10'],
-            'email' => ['required', 'string', 'email', 'max:20'],
+            'email' => ['required', 'string', 'email', 'max:30'],
             'password' => ['required', 'string', 'min:8'],
             'type' => 'required',
              ] );

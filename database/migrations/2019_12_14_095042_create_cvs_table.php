@@ -18,7 +18,7 @@ class CreateCvsTable extends Migration
             $table->string('titre');
             $table->string('diver');
             $table->unsignedbigInteger('idCandidate');
-            $table->foreign('idCandidate')->references('idCandidate')->on('candidates');
+            $table->foreign('idCandidate')->references('id')->on('candidates');
             $table->timestamps();
         });
     }

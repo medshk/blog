@@ -9,11 +9,7 @@
 <!-- la partie dynamique de home-->
 @section('main')
     
-@php
-if(auth::guard('candidate')->check()){
-    echo '<script>alert("candidate")</script>';
-}
-@endphp
+
 
 <section>
     <div class="block no-padding">

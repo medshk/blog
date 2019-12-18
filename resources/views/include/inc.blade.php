@@ -8,7 +8,7 @@
         </div>
 
         <!-- if guest-->
-        @guest
+        @if (!auth::guard('candidate')->check() )
         <div class="btn-extars">
             <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Poster des emplois</a>
             <ul class="account-btns">
@@ -16,18 +16,18 @@
                 <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Connecter</a></li>
             </ul>
         </div><!-- Btn Extras -->
-        @endguest
+        @endif
 
-<?php echo auth::guard('candidate')->id(); ?>
+
         <!-- if candidate -->
         @if (auth::guard('candidate')->check())
             
-        <div class="logo">
-            <a href="index.html" title=""><img src="images/resource/logo.png" alt="" /></a>
-        </div><!-- Logo -->
+        
         <div class="my-profiles-sec">
-            <span><img src="images/resource/mp1.jpg" alt="" /> Ali TUFAN <i class="la la-bars"></i></span>
+            <span><img src="images/resource/mp1.jpg" alt="" /><i class="la la-bars"> {{auth::guard('candidate')->user()->nom}}
+                 {{auth::guard('candidate')->user()->prenom}}</i></span>
         </div>
+      
         <div class="wishlist-dropsec">
             <span><i class="la la-heart"></i><strong>3</strong></span>
             <div class="wishlist-dropdown">
@@ -80,8 +80,10 @@
                 </ul>
             </div>
         </div>
-
-        <script>alert('hello')</script>
+        <div class="btn-extars">
+            <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Poster </a>
+        </div>
+    
             
         @endif
         <!-- end candidate -->

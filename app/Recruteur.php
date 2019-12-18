@@ -14,5 +14,8 @@ class Recruteur extends Authenticatable
     ];
     use Notifiable;
     protected $guard='recruteur';
+    protected $hidden = [
+        'password', 'remember_token'
+    ];
     //
 }

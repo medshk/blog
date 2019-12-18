@@ -14,15 +14,16 @@ class CreateRecruteursTable extends Migration
     public function up()
     {
         Schema::create('recruteurs', function (Blueprint $table) {
-            $table->bigIncrements('idRecruteur')->unique();
+            $table->bigIncrements('id');
             $table->enum('type',['public','prive']);
             $table->string('nom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->string('logo');
-            $table->string('adress');
+            $table->string('logo')->nullable();
+            $table->string('adress')->nullable();
             $table->string('num_tel');
-            $table->string('site_web');
+            $table->string('site_web')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateCandidaturesTable extends Migration
         Schema::create('candidatures', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedbigInteger('idCandidate');
-            $table->foreign('idCandidate')->references('idCandidate')->on('candidates');
+            $table->foreign('idCandidate')->references('id')->on('candidates');
             $table->unsignedbigInteger('idOffre');
             $table->foreign('idOffre')->references('id')->on('offres');
             $table->timestamps();
