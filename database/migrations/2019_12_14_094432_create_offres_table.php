@@ -23,7 +23,8 @@ class CreateOffresTable extends Migration
             $table->string('description');
             $table->string('lieu_de_travail');
             $table->string('competence');
-            $table->string('remuneration');
+
+            $table->string('salaire');
             $table->date('date_de_depot');
             $table->date('date_de_debut');
             $table->enum('statut',['publiee','retiree']);
@@ -31,7 +32,7 @@ class CreateOffresTable extends Migration
             $table->unsignedbigInteger('idRec');
             $table->foreign('idRec')->references('id')->on('recruteurs');
             $table->timestamps();
-           
+
         });
     }
 
