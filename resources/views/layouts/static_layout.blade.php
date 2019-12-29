@@ -22,6 +22,9 @@
 	<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
 	<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 	<script src="{{asset('js/switching_forms.js?1500')}}" type="text/javascript"></script>
+	<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
 	
 </head>
 <body>
@@ -42,7 +45,15 @@
 				</div>
 			</div>
     </div>
-<header class="stick-top forsticky">
+<header <?php 
+
+	if(auth::guard('candidate')->check()||auth::guard('recruteur')->check())
+	{
+		echo 'class="stick-top "';
+	}
+	else echo 'class="stick-top forsticky"';
+
+?>>
 @yield('navbar')
 
 </header>
@@ -132,7 +143,7 @@
 		</div>
 	</footer>
 
-</div>
+
 
 <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/modernizr.js" type="text/javascript"></script>
@@ -144,6 +155,7 @@
 <script src="js/select-chosen.js" type="text/javascript"></script>
 <script src="js/jquery.scrollbar.min.js" type="text/javascript"></script>
 <script src="js/circle-progress.min.js" type="text/javascript"></script>
+<script src="js/slick.min.js" type="text/javascript"></script>
 
 </body>
 

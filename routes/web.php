@@ -55,6 +55,19 @@ function () {
     
     return view('pages.success');
 });
+
+Route::get('/inc',
+function () {
+    
+    return view('include.inc');
+});
+Route::get('/recruteur',
+function () {
+    
+    return view('pages/recruteur/recruteur_home');
+});
+    
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@show')->name('home');
@@ -62,3 +75,4 @@ Route::post('/register_candidate','Auth\RegisterController@create_candidate')->n
 Route::post('/register_recruteur','Auth\RegisterController@create_recruteur')->name('register_recruteur');
 Route::post('candidate_login','Auth\LoginController@candidate_login')->name('candidate_login');
 Route::post('recruteur_login','Auth\LoginController@recruteur_login')->name('recruteur_login');
+Route::get('logout','Auth\LoginController@logout')->name('logout');
