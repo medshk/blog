@@ -101,14 +101,14 @@
                 <li class="menu-item-has-children">
                     <a href="#" title="">Recruteur Dashboard</a>
                     <ul>
-                        <li><a href="employer_manage_jobs.html" title="">Gestion d'emploi </a></li>
+                        <li><a href="{{url('recruteur/1/offres')}}" title="">Gestion d'emploi </a></li>
                         <li><a href="employer_packages.html" title="">Paquet</a></li>
                         <li><a href="{{url('offre/create')}}" title="">Nouveau poste</a></li>
-                        <li><a href="employer_profile.html" title="">Recruteur Profile</a></li>
+                        <li><a href="{{url('recruteur/1/profile')}}" title="">Recruteur Profile</a></li>
                         <li><a href="employer_resume.html" title=""> Résumé</a></li>
                         <li><a href="employer_transactions.html" title="">Transaction</a></li>
                         <li><a href="employer_job_alert.html" title="">Notification</a></li>
-                        <li><a href="employer_change_password.html" title="">Changer Modepasse</a></li>
+                        <li><a href="{{url('recruteur/1/edit')}}" title="">Changer Modepasse</a></li>
                     </ul>
                 </li>
             </ul>
