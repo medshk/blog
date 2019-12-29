@@ -23,13 +23,13 @@
 
         <!-- if candidate -->
         @if (auth::guard('candidate')->check())
-            
-        
+
+
         <div class="my-profiles-sec">
             <span><img src="images/resource/mp1.jpg" alt="" /><i class="la la-bars"> {{auth::guard('candidate')->user()->nom}}
                  {{auth::guard('candidate')->user()->prenom}}</i></span>
         </div>
-      
+
         <div class="wishlist-dropsec">
             <span><i class="la la-heart"></i><strong>1</strong></span>
             <div class="wishlist-dropdown">
@@ -65,6 +65,8 @@
                 <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li>
             </ul>
         </div>
+
+
         @endif
 
 
@@ -78,7 +80,7 @@
     <ul>
         <li >
             <a href="#" title="">Home</a>
-        
+
         </li>
         <li class="menu-item-has-children">
             <a href="#" title="">Recruteurs</a>
@@ -88,14 +90,14 @@
                 <li class="menu-item-has-children">
                     <a href="#" title="">Recruteur Dashboard</a>
                     <ul>
-                        <li><a href="employer_manage_jobs.html" title="">Gestion d'emploi </a></li>
+                        <li><a href="{{url('recruteur/1/offres')}}" title="">Gestion d'emploi </a></li>
                         <li><a href="employer_packages.html" title="">Paquet</a></li>
-                        <li><a href="employer_post_new.html" title="">Nouveau poste</a></li>
-                        <li><a href="employer_profile.html" title="">Recruteur Profile</a></li>
+                        <li><a href="{{url('offre/create')}}" title="">Nouveau poste</a></li>
+                        <li><a href="{{url('recruteur/1/profile')}}" title="">Recruteur Profile</a></li>
                         <li><a href="employer_resume.html" title=""> Résumé</a></li>
                         <li><a href="employer_transactions.html" title="">Transaction</a></li>
                         <li><a href="employer_job_alert.html" title="">Notification</a></li>
-                        <li><a href="employer_change_password.html" title="">Changer Modepasse</a></li>
+                        <li><a href="{{url('recruteur/1/edit')}}" title="">Changer Modepasse</a></li>
                     </ul>
                 </li>
             </ul>
@@ -123,7 +125,7 @@
         </li>
         <li class="menu-item-has-children">
             <a href="blog_list2.html" title="">Blog</a>
-            <ul>	
+            <ul>
                 <li><a href="blog_list2.html">Blog List 2</a></li>
                 <li><a href="blog_single.html">Blog Single</a></li>
             </ul>

@@ -96,7 +96,7 @@
 										<a href="#" title="">Communications </a>
 										<a href="#" title="">Referral Terms </a>
 										<a href="#" title="">Lending Licnses </a>
-										<a href="#" title="">Disclaimers </a>	
+										<a href="#" title="">Disclaimers </a>
 									</div>
 									<div class="col-lg-6">
 										<a href="#" title="">Support </a>
@@ -115,12 +115,12 @@
 							<div class="link_widgets">
 								<div class="row">
 									<div class="col-lg-12">
-										<a href="#" title="">US Jobs</a>	
-										<a href="#" title="">Canada Jobs</a>	
-										<a href="#" title="">UK Jobs</a>	
-										<a href="#" title="">Emplois en Fnce</a>	
-										<a href="#" title="">Jobs in Deuts</a>	
-										<a href="#" title="">Vacatures China</a>	
+										<a href="#" title="">US Jobs</a>
+										<a href="#" title="">Canada Jobs</a>
+										<a href="#" title="">UK Jobs</a>
+										<a href="#" title="">Emplois en Fnce</a>
+										<a href="#" title="">Jobs in Deuts</a>
+										<a href="#" title="">Vacatures China</a>
 									</div>
 								</div>
 							</div>
@@ -145,17 +145,18 @@
 
 
 
-<script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
-<script src="js/modernizr.js" type="text/javascript"></script>
-<script src="js/script.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/wow.min.js" type="text/javascript"></script>
-<script src="js/slick.min.js" type="text/javascript"></script>
-<script src="js/parallax.js" type="text/javascript"></script>
-<script src="js/select-chosen.js" type="text/javascript"></script>
-<script src="js/jquery.scrollbar.min.js" type="text/javascript"></script>
-<script src="js/circle-progress.min.js" type="text/javascript"></script>
-<script src="js/slick.min.js" type="text/javascript"></script>
+<script src="{{asset('js/jquery.min.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/modernizr.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/script.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/wow.min.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/slick.min.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/parallax.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/select-chosen.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/jquery.scrollbar.min.js')}}" charset="utf-8"></script>
+<script src="{{asset('js/circle-progress.min.js')}}" charset="utf-8"></script>
+
+@yield('scripts')
 
 </body>
 

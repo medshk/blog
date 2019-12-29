@@ -31,28 +31,28 @@ function () {
 
 Route::get('/candidate',
 function () {
-    
+
     return view('pages/candidate/candidate_shortlist');
 });
 Route::get('/candidat',
 function () {
-    
+
     return view('pages/candidate/candidate_dashboard');
 });
 Route::get('/recruteur',
 function () {
-    
+
     return view('pages.recruteur.recruteur_view_profile');
 });
 
 Route::get('/offre',
 function () {
-    
+
     return view('pages.offre.offre_view');
 });
 Route::get('/success',
 function () {
-    
+
     return view('pages.success');
 });
 
@@ -75,4 +75,15 @@ Route::post('/register_candidate','Auth\RegisterController@create_candidate')->n
 Route::post('/register_recruteur','Auth\RegisterController@create_recruteur')->name('register_recruteur');
 Route::post('candidate_login','Auth\LoginController@candidate_login')->name('candidate_login');
 Route::post('recruteur_login','Auth\LoginController@recruteur_login')->name('recruteur_login');
-Route::get('logout','Auth\LoginController@logout')->name('logout');
+
+
+
+Route::resource('offre', 'OffreController',[
+    'only' => ['index', 'create','store','edit','update','destroy']
+]);
+
+Route::resource('recruteur', 'RecruteurController',[
+    'only' => [ 'edit','update','destroy']
+]);
+Route::get('recruteur/{id}/profile','RecruteurController@profile');
+Route::get('recruteur/{id}/offres','RecruteurController@offres');

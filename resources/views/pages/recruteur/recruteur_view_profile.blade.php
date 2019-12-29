@@ -3,7 +3,7 @@
     @include('include.inc')
 @endsection
 @section('main')
-    
+
 
 <section class="overlape">
     <div class="block no-padding">
@@ -30,10 +30,14 @@
                              <div class="row">
                                  <div class="col-lg-10">
                                      <div class="job-single-head3 emplye">
-                                         <div class="job-thumb"> <img src="images/resource/sdf.png" alt="" /></div>
+                                         <div class="job-thumb">
+                                           @if(isset($recruteur->logo))
+                                            <img src="{{asset($recruteur->logo)}}" alt="" />
+                                            @endif
+                                          </div>
                                          <div class="job-single-info3">
-                                             <h3>Tera Planner</h3>
-                                             <span><i class="la la-map-marker"></i>Sacramento, California</span><span class="job-is ft">Full time</span>
+                                             <h3>{{$recruteur->nom}}</h3>
+                                             <span><i class="la la-map-marker"></i>{{$recruteur->adress}}</span><span class="job-is ft">Full time</span>
                                              <ul class="tags-jobs">
                                                  <li><i class="la la-file-text"></i> Applications 1</li>
                                                  <li><i class="la la-calendar-o"></i> Post Date: July 29, 2017</li>
@@ -55,7 +59,7 @@
                          </div>
                          <div class="job-wide-devider">
                              <div class="row">
-                                 <div class="col-lg-8 column">		
+                                 <div class="col-lg-8 column">
                                      <div class="job-details">
                                          <h3>About Business Network</h3>
                                          <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered inset one echidna cassowary some parrot and much as goodness some froze the sullen much connected bat wonderfully on instantaneously eel valiantly petted this along across highhandedly much. </p>
@@ -131,7 +135,7 @@
                                          <h3>Company Information</h3>
                                          <ul>
                                              <li><i class="la la-eye"></i><h3>Viewed </h3><span>164</span></li>
-                                             <li><i class="la la-file-text"></i><h3>Posted Jobs</h3><span>4</span></li>
+                                             <li><i class="la la-file-text"></i><h3>Posted Jobs</h3><span>{{$offres->count()}}</span></li>
                                              <li><i class="la la-map"></i><h3>Locations</h3><span>United States, San Diego</span></li>
                                              <li><i class="la la-bars"></i><h3>Categories</h3><span>Arts, Design, Media</span></li>
                                              <li><i class="la la-clock-o"></i><h3>Since</h3><span>2002</span></li>
@@ -161,4 +165,3 @@
 </section>
 
 @endsection
-
