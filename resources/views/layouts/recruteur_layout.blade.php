@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-header">
-                        <h3>Welcome Tera Planer</h3>
+                        <h3>Bienvenue {{$user->nom}}</h3>
                     </div>
                 </div>
             </div>
@@ -48,9 +48,9 @@
                  </aside>
                  <div class="col-lg-9 column">
                      <div class="padding-left">
-                         
+
                              @yield('content')
-                         
+
                      </div>
                 </div>
              </div>

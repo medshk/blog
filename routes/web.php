@@ -55,19 +55,6 @@ function () {
 
     return view('pages.success');
 });
-
-Route::get('/inc',
-function () {
-    
-    return view('include.inc');
-});
-Route::get('/recruteur',
-function () {
-    
-    return view('pages/recruteur/recruteur_home');
-});
-    
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@show')->name('home');
@@ -85,5 +72,5 @@ Route::resource('offre', 'OffreController',[
 Route::resource('recruteur', 'RecruteurController',[
     'only' => [ 'edit','update','destroy']
 ]);
-Route::get('recruteur/{id}/profile','RecruteurController@profile');
-Route::get('recruteur/{id}/offres','RecruteurController@offres');
+Route::get('recruteur/profile','RecruteurController@profile');
+Route::get('recruteur/offres','RecruteurController@offres');
