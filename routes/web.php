@@ -61,11 +61,8 @@ function () {
     
     return view('include.inc');
 });
-Route::get('/recruteur',
-function () {
-    
-    return view('pages/recruteur/recruteur_home');
-});
+Route::get('/recruteur','RecruteurHomeController@displayCandidates'
+);
     
 
 Auth::routes();

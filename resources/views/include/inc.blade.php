@@ -52,7 +52,7 @@
         <!-- if recruteur-->
         @elseif(auth::guard('recruteur')->check())
         <div class="btns-profiles-sec">
-            <span><img src="images/resource/profile.jpg" alt="" /> Tera Planer <i class="la la-angle-down"></i></span>
+            <span><img src="images/resource/profile.jpg" alt="" />{{auth::guard('recruteur')->user()->nom}}<i class="la la-angle-down"></i></span>
             <ul>
                 <li><a href="employer_profile.html" title=""><i class="la la-file-text"></i>Company Profile</a></li>
                 <li><a href="employer_manage_jobs.html" title=""><i class="la la-briefcase"></i>Manage Jobs</a></li>
