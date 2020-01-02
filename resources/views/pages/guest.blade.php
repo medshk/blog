@@ -171,9 +171,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="simple-text-block">
-                        <h3>Faites une différence avec votre CV en ligne!</h3>
-                        <span>Votre CV en quelques minutes avec l'assistant de CV JobHunt est prêt!</span>
-                        <a  title=""  class="signup-popup">Créer un compte</a>
+                        <h3>Votre CV en quelques minutes avec l'assistant de CV JobHunt est prêt!</h3>
+                        <span>Créer un compte</span>
+                        <a href="#" title=""></a>
                     </div>
                 </div>
             </div>
@@ -201,89 +201,61 @@
                             <span class="fav-job"><i class="la la-heart-o"></i></span>
                             <span class="job-is ft">À PLEIN TEMPS</span>
                         </div><!-- Job -->
-                     
-                      
-                       
-                       
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l2.png" alt="" /> </div>
+                                <h3><a href="#" title="">Directeur Marketing </a></h3>
+                                <span></span>
+                            </div>
+                            <span class="job-lctn"><i class="la la-map-marker"></i>Rennes, France</span>
+                            <span class="fav-job"><i class="la la-heart-o"></i></span>
+                            <span class="job-is pt">À TEMPS PARTIEL</span>
+                        </div><!-- Job -->
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l3.png" alt="" /> </div>
+                                <h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
+                                <span>StarHealth</span>
+                            </div>
+                            <span class="job-lctn"><i class="la la-map-marker"></i>London, United Kingdom</span>
+                            <span class="fav-job"><i class="la la-heart-o"></i></span>
+                            <span class="job-is ft">FULL TIME</span>
+                        </div><!-- Job -->
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l4.png" alt="" /> </div>
+                                <h3><a href="#" title="">Application Developer For Android</a></h3>
+                                <span>Altes Bank</span>
+                            </div>
+                            <span class="job-lctn"><i class="la la-map-marker"></i>Istanbul, Turkey</span>
+                            <span class="fav-job"><i class="la la-heart-o"></i></span>
+                            <span class="job-is fl">FREELANCE</span>
+                        </div><!-- Job -->
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l5.png" alt="" /> </div>
+                                <h3><a href="#" title="">Regional Sales Manager South east Asia</a></h3>
+                                <span>Vincent</span>
+                            </div>
+                            <span class="job-lctn"><i class="la la-map-marker"></i>Ajax, Ontario</span>
+                            <span class="fav-job"><i class="la la-heart-o"></i></span>
+                            <span class="job-is tp">TEMPORARY</span>
+                        </div><!-- Job -->
+                        <div class="job-listing">
+                            <div class="job-title-sec">
+                                <div class="c-logo"> <img src="images/resource/l6.png" alt="" /> </div>
+                                <h3><a href="#" title="">Social Media and Public Relation Executive </a></h3>
+                                <span>MediaLab</span>
+                            </div>
+                            <span class="job-lctn"><i class="la la-map-marker"></i>Ankara / Turkey</span>
+                            <span class="fav-job"><i class="la la-heart-o"></i></span>
+                            <span class="job-is ft">FULL TIME</span>
+                        </div><!-- Job -->
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="browse-all-cat">
                         <a href="#" title="">Charger plus d'annonces</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="block gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading">
-                        <h2>Featured Candidates</h2>
-                        <span>Every single one of our jobs has some kind of flexibility option</span>
-                    </div><!-- Heading -->
-                    <div class="team-sec">
-                        <div class="row" id="team-carousel">
-                            <div class="col-lg-3">
-                                <div class="team">
-                                    <div class="team-img"><img src="images/resource/t1.jpg" alt="" /></div>
-                                    <div class="team-detail">
-                                        <h3><a href="#" title="">Amanda Cook</a></h3>
-                                        <span>I Knew You Were Trouble</span>
-                                        <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                        <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
-                                    </div>
-                                </div><!-- Team -->
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="team">
-                                    <div class="team-img"><img src="images/resource/t2.jpg" alt="" /></div>
-                                    <div class="team-detail">
-                                        <h3><a href="#" title="">İbrahim Agay</a></h3>
-                                        <span>Developer</span>
-                                        <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                        <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
-                                    </div>
-                                </div><!-- Team -->
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="team">
-                                    <div class="team-img"><img src="images/resource/t3.jpg" alt="" /></div>
-                                    <div class="team-detail">
-                                        <h3><a href="#" title="">Ali Tufan</a></h3>
-                                        <span>Senior UI / UX Designer</span>
-                                        <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                        <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
-                                    </div>
-                                </div><!-- Team -->
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="team">
-                                    <div class="team-img"><img src="images/resource/t4.jpg" alt="" /></div>
-                                    <div class="team-detail">
-                                        <h3><a href="#" title="">Juan Suso</a></h3>
-                                        <span>IT Outsource Company</span>
-                                        <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                        <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
-                                    </div>
-                                </div><!-- Team -->
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="team">
-                                    <div class="team-img"><img src="images/resource/t2.jpg" alt="" /></div>
-                                    <div class="team-detail">
-                                        <h3><a href="#" title="">Senimae Zuis</a></h3>
-                                        <span>Web Designer</span>
-                                        <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                        <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
-                                    </div>
-                                </div><!-- Team -->
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -436,165 +408,7 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="block gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading">
-                        <h2>Projob Site Stats</h2>
-                        <span>Here we list our site stats and how many people we’ve helped find a job and companies have found <br />recruits. It's a pretty awesome stats area!</span>
-                    </div><!-- Heading -->
-                    <div class="stats-sec style2">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="stats">
-                                    <span>18</span>
-                                    <h5>Jobs Posted</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="stats">
-                                    <span>38</span>
-                                    <h5>Jobs Filled</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="stats">
-                                    <span>67</span>
-                                    <h5>Companies</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="stats">
-                                    <span>92</span>
-                                    <h5>Members</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-
-<section>
-    <div class="block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading">
-                        <h2>How It Works</h2>
-                        <span>Each month, more than 7 million Jobhunt turn to website in their search for work, making over <br />160,000 applications every day.
-                        </span>
-                    </div><!-- Heading -->
-                    <div class="how-to-sec style2 no-lines">
-                        <div class="how-to">
-                            <span class="how-icon"><i class="la la-user"></i></span>
-                            <h3>Register an account</h3>
-                            <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
-                        </div>
-                        <div class="how-to">
-                            <span class="how-icon"><i class="la la-file-archive-o"></i></span>
-                            <h3>Specify & search your job</h3>
-                            <p>Browse profiles, reviews, and proposals then interview top candidates. </p>
-                        </div>
-                        <div class="how-to">
-                            <span class="how-icon"><i class="la la-list"></i></span>
-                            <h3>Apply for job</h3>
-                            <p>Use the Upwork platform to chat, share files, and collaborate from your desktop or on the go.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="block ">
-        <div data-velocity="-.2" style="background: url(images/resource/parallax5.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible"></div><!-- PARALLAX BACKGROUND IMAGE -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading">
-                        <h2>Buy Our Plans And Packeges</h2>
-                        <span>One of our jobs has some kind of flexibility option - such as telecommuting, a part-time schedule or a flexible or flextime schedule.</span>
-                    </div><!-- Heading -->
-                    <div class="plans-sec">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                <div class="pricetable style2">
-                                    <div class="pricetable-head">
-                                        <h3>Basic Jobs</h3>
-                                        <h2><i>$</i>10</h2>
-                                        <span>15 Days</span>
-                                    </div><!-- Price Table -->
-                                    <ul>
-                                        <li>1 job posting</li>
-                                        <li>0 featured job</li>
-                                        <li>Job displayed for 20 days</li>
-                                        <li>Premium Support 24/7</li>
-                                    </ul>
-                                    <a href="#" title="">BUY NOW</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                <div class="pricetable active style2">
-                                    <div class="pricetable-head">
-                                        <h3>Standard Jobs</h3>
-                                        <h2><i>$</i>45</h2>
-                                        <span>20 Days</span>
-                                    </div><!-- Price Table -->
-                                    <ul>
-                                        <li>11 job posting</li>
-                                        <li>12 featured job</li>
-                                        <li>Job displayed for 30 days</li>
-                                        <li>Premium Support 24/7</li>
-                                    </ul>
-                                    <a href="#" title="">BUY NOW</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                <div class="pricetable style2">
-                                    <div class="pricetable-head">
-                                        <h3>Golden Jobs</h3>
-                                        <h2><i>$</i>80</h2>
-                                        <span>2 Month</span>
-                                    </div><!-- Price Table -->
-                                    <ul>
-                                        <li>44 job posting</li>
-                                        <li>56 featured job</li>
-                                        <li>Job displayed for 80 days</li>
-                                        <li>Premium Support 24/7</li>
-                                    </ul>
-                                    <a href="#" title="">BUY NOW</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                <div class="pricetable style2">
-                                    <div class="pricetable-head">
-                                        <h3>Golden Jobs</h3>
-                                        <h2><i>$</i>80</h2>
-                                        <span>2 Month</span>
-                                    </div><!-- Price Table -->
-                                    <ul>
-                                        <li>44 job posting</li>
-                                        <li>56 featured job</li>
-                                        <li>Job displayed for 80 days</li>
-                                        <li>Premium Support 24/7</li>
-                                    </ul>
-                                    <a href="#" title="">BUY NOW</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section>
     <div class="block no-padding">
         <div class="container fluid">

@@ -88,12 +88,12 @@
     <input type="hidden" name="_method" value="PUT">
     {{ csrf_field() }}
         <div class="upload-img-bar">
-            <!-- <span><img src="{{$recruteur->logo}}" alt="" /><i>x</i></span>
+            <!-- <span><img src="{{$user->logo}}" alt="" /><i>x</i></span>
             <div class="upload-info">
                 <a href="#" title="">Browse</a>
                 <span>Max file size is 1MB, Minimum dimension: 270x210 And Suitable files are .jpg & .png</span>
             </div> -->
-            <div id='actualite-upload' @if(isset($recruteur->logo)) style="background-image:url('{{asset($recruteur->logo)}}')" @endif>
+            <div id='actualite-upload' @if(isset($user->logo)) style="background-image:url('{{asset($user->logo)}}')" @endif>
               <div class="hvr-profile-img">
                 <input type="file" name="img" id='actualite-photo'  class="upload w180" title="Dimensions 180 X 180" id="imag">
               </div>
@@ -110,7 +110,7 @@
             <div class="col-lg-6">
                 <span class="pf-title">Company Name</span>
                 <div class="pf-field">
-                    <input type="text" name="nom" value="{{$recruteur->nom}}" />
+                    <input type="text" name="nom" value="{{$user->nom}}" />
                 </div>
             </div>
             <div class="col-lg-6">
@@ -175,19 +175,19 @@
             <div class="col-lg-4">
                 <span class="pf-title">Phone Number</span>
                 <div class="pf-field">
-                    <input type="text" name="num_tel" value="{{$recruteur->num_tel}}" />
+                    <input type="text" name="num_tel" value="{{$user->num_tel}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Email</span>
                 <div class="pf-field">
-                    <input type="text" name="email" value="{{$recruteur->email}}" />
+                    <input type="text" name="email" value="{{$user->email}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Website</span>
                 <div class="pf-field">
-                    <input type="text" name="website" value="{{$recruteur->site_web}}" />
+                    <input type="text" name="website" value="{{$user->site_web}}" />
                 </div>
             </div>
 
@@ -201,7 +201,7 @@
             <div class="col-lg-4">
                 <span class="pf-title">Email</span>
                 <div class="pf-field">
-                    <input type="text" name="email" value="{{$recruteur->email}}" />
+                    <input type="text" name="email" value="{{$user->email}}" />
                 </div>
             </div>
             <div class="col-lg-4">
@@ -266,19 +266,19 @@
             <div class="col-lg-4">
                 <span class="pf-title">Phone Number</span>
                 <div class="pf-field">
-                    <input type="text" name="num_tel" placeholder="{{$recruteur->num_tel}}" />
+                    <input type="text" name="num_tel" placeholder="{{$user->num_tel}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Email</span>
                 <div class="pf-field">
-                    <input type="text" name="email" placeholder="{{$recruteur->email}}" />
+                    <input type="text" name="email" placeholder="{{$user->email}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Website</span>
                 <div class="pf-field">
-                    <input type="text" placeholder="{{$recruteur->site_web}}" />
+                    <input type="text" placeholder="{{$user->site_web}}" />
                 </div>
             </div>
             <div class="col-lg-6">

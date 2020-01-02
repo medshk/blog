@@ -23,11 +23,11 @@ class OffreController extends Controller
 
   public function edit($id)
   {
-    $user=Recruteur::find(1);
-    $c=Competence::all();
+
+    $user=Auth::guard('recruteur')->user();
     $offre=Offre::find($id);
 
-     return view('pages.recruteur.recruteur_post_edit' , ['offre'=>$offre,'user'=>$user,'comp'=>$c]);
+     return view('pages.recruteur.recruteur_post_edit' , ['offre'=>$offre,'user'=>$user]);
   }
 
 
@@ -48,13 +48,14 @@ class OffreController extends Controller
  //      }
  //
  // Auth::user()->id;
+   $idRec=Auth::guard('recruteur')->user()->id;
       if($offre){
 
           $offre->intitule= $request->input('intitule');
           $offre->type_contract = $request->input('type_contrat');
           $offre->domaine = $request->input('domaine');
           // $offre->idRec = Auth::user()->id;
-          $offre->idRec = 1;
+          $offre->idRec =$idRec ;
           $offre->diplome = $request->input('diplome');
           $offre->lieu_de_travail = $request->input('lieu');
           $offre->competence = $request->input('competence');
@@ -66,15 +67,11 @@ class OffreController extends Controller
           $offre->nmbr_annee_exp = $request->input('nmbr_annee_exp');
             $offre->description = $request->input('description');
 
-          $idComp=$request->input('competence');
-          $compDesc=Competence::find($idComp);
-
-          $offre->competence = $compDesc->description;
 
  //          $offre->photo = 'uploads/photo/offres/'.$file_name;
  //
           if(  $offre->save())
-            return redirect('/recruteur/1/profile');
+            return redirect('/recruteur/profile');
           else
             return redirect('/create');
         }
@@ -90,10 +87,11 @@ class OffreController extends Controller
 
 
 
-        $user=Recruteur::find(1);
-        $c=Competence::all();
+        // $user=Recruteur::find(1);
+          $user=Auth::guard('recruteur')->user();
 
-         return view('pages.recruteur.recruteur_post_new' , ['user'=>$user,'comp'=>$c]);
+
+         return view('pages.recruteur.recruteur_post_new' , ['user'=>$user]);
   }
 
 
@@ -115,12 +113,12 @@ class OffreController extends Controller
  //      }
  //
  // Auth::user()->id;
-
+  $idRec=Auth::guard('recruteur')->user()->id;
           $offre->intitule= $request->input('intitule');
           $offre->type_contract = $request->input('type_contrat');
           $offre->domaine = $request->input('domaine');
           // $offre->idRec = Auth::user()->id;
-          $offre->idRec = 1;
+          $offre->idRec = $idRec;
           $offre->diplome = $request->input('diplome');
           $offre->lieu_de_travail = $request->input('lieu');
           $offre->competence = $request->input('competence');
@@ -132,15 +130,12 @@ class OffreController extends Controller
           $offre->nmbr_annee_exp = $request->input('nmbr_annee_exp');
             $offre->description = $request->input('description');
 
-          $idComp=$request->input('competence');
-          $compDesc=Competence::find($idComp);
 
-          $offre->competence = $compDesc->description;
 
  //          $offre->photo = 'uploads/photo/offres/'.$file_name;
  //
         if(  $offre->save())
-          return redirect('/recruteur/1/profile');
+          return redirect('/recruteur/profile');
           else
           return redirect('/create');
   }
@@ -150,11 +145,12 @@ class OffreController extends Controller
 
   public function destroy($id)
   {
+            $idRec=Auth::guard('recruteur')->user()->id;
 
             $offre= Offre::find($id);
             if($offre){
                 $offre->delete();
-                return redirect('recruteur/1/offres');
+                return redirect('recruteur/offres');
               }
               else {
                 return view('errors.404');
