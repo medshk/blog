@@ -123,7 +123,7 @@
                         <li><a href="employer_resume.html" title=""> Résumé</a></li>
                         <li><a href="employer_transactions.html" title="">Transaction</a></li>
                         <li><a href="employer_job_alert.html" title="">Notification</a></li>
-                        <li><a href="{{url('recruteur/'.$user->id.'/edit')}}" title="">Changer Modepasse</a></li>
+                        <li><a href="" title="">Changer Modepasse</a></li>
                     </ul>
                 </li>
             </ul>
