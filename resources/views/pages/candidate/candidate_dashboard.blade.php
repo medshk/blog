@@ -15,19 +15,19 @@
            </div>
        </div>
        <div class="col-lg-4 col-md-4 col-sm-12">
-           <div class="p-category view-resume-list">
-               <a href="#" title="">
+           <div class="p-category">
+               <a href="{{url('resume')}}" title="">
                    <i class="la la-eye"></i>
-                   <span>View Resume</span>
-                   <p>22 View Statistic</p>
+                   <span>Voir mes CV</span>
+                 
                </a>
            </div>
        </div>
        <div class="col-lg-4 col-md-4 col-sm-12">
            <div class="p-category">
-               <a href="#" title="">
+               <a href="{{url('resumevide')}}" title="">
                    <i class="la la-file-text "></i>
-                   <span>My Resume</span>
+                   <span>Crée un CV</span>
                    <p>Create New Resume</p>
                </a>
            </div>
@@ -56,7 +56,7 @@
        </div>
        <div class="col-lg-4 col-md-4 col-sm-12">
            <div class="p-category">
-               <a href="#" title="">
+               <a href="{{url('profil')}}" title="">
                    <i class="la la-file"></i>
                    <span>My Profile</span>
                    <p>View Profile</p>
