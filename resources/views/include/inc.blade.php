@@ -81,7 +81,6 @@
                 </ul>
             </div>
         </div>
-<<<<<<< HEAD
         <!-- end candidate -->
 
         <!-- if recruteur-->
@@ -102,13 +101,6 @@
         </div>
 
 
-=======
-        <div class="btn-extars">
-            <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Poster </a>
-        </div>
-    
-            
->>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
         @endif
         <!-- end candidate -->
 <nav>
@@ -190,10 +182,6 @@
     </ul>
 </nav><!-- Menus -->
     </div>
-<<<<<<< HEAD
 </div>
 
 
-=======
-</div>
->>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
