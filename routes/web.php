@@ -56,6 +56,7 @@ function () {
     return view('pages.success');
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Route::get('/inc',
 function () {
@@ -70,6 +71,8 @@ Route::get('/recruteur','RecruteurHomeController@displayCandidates'
 
 =======
 >>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
+=======
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
 Auth::routes();
 
 Route::get('/home', 'HomeController@show')->name('home');
@@ -77,6 +80,7 @@ Route::post('/register_candidate','Auth\RegisterController@create_candidate')->n
 Route::post('/register_recruteur','Auth\RegisterController@create_recruteur')->name('register_recruteur');
 Route::post('candidate_login','Auth\LoginController@candidate_login')->name('candidate_login');
 Route::post('recruteur_login','Auth\LoginController@recruteur_login')->name('recruteur_login');
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -90,5 +94,7 @@ Route::resource('recruteur', 'RecruteurController',[
 ]);
 Route::get('recruteur/profile','RecruteurController@profile');
 Route::get('recruteur/offres','RecruteurController@offres');
+=======
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
 =======
 >>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
