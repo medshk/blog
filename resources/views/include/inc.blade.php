@@ -25,9 +25,8 @@
 
         <div class="my-profiles-sec">
             <span><img src="images/resource/mp1.jpg" alt="" /><i class="la la-bars"> {{auth::guard('candidate')->user()->nom}}
-                 {{auth::guard('candidate')->user()->prenom}}</i></span                 
-             
-            </div>
+                 {{auth::guard('candidate')->user()->prenom}}</i></span>
+        </div>
 
         <div class="wishlist-dropsec">
             <span><i class="la la-heart"></i><strong>3</strong></span>
@@ -81,6 +80,8 @@
                 </ul>
             </div>
         </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
         <!-- end candidate -->
 
         <!-- if recruteur-->
@@ -101,6 +102,20 @@
         </div>
 
 
+=======
+        <div class="btn-extars">
+            <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Poster </a>
+        </div>
+    
+            
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
+=======
+        <div class="btn-extars">
+            <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Poster </a>
+        </div>
+    
+            
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
         @endif
         <!-- end candidate -->
 <nav>
@@ -182,6 +197,12 @@
     </ul>
 </nav><!-- Menus -->
     </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
 </div>
-
-
+=======
+</div>
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
+=======
+</div>
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
