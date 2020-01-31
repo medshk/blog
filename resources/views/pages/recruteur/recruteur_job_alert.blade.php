@@ -5,7 +5,6 @@
 @section('content')
 
 
-
 <div class="manage-jobs-sec">
 <h3>Job Alerts</h3>
 						 		<table class="alrt-table">
