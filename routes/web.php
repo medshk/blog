@@ -59,13 +59,11 @@ function () {
 Route::get('/inc',
 function () {
     
-    
     return view('include.inc');
 });
 Route::get('/recruteur','RecruteurHomeController@displayCandidates'
 );
     
-
 
 Auth::routes();
 
@@ -84,5 +82,5 @@ Route::resource('offre', 'OffreController',[
 Route::resource('recruteur', 'RecruteurController',[
     'only' => [ 'edit','update','destroy']
 ]);
-Route::get('recruteur/profile','RecruteurController@profile');
-Route::get('recruteur/offres','RecruteurController@offres');
+Route::get('recruteur/{id}/profile','RecruteurController@profile');
+Route::get('recruteur/{id}/offres','RecruteurController@offres');

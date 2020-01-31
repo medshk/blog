@@ -17,23 +17,24 @@ class RecruteurController extends Controller
        auth::guard('recruteur')->check();
     }
 
-    public function profile()
+    public function profile($id)
     {
 
 
-        $user=Auth::guard('recruteur')->user();
-          $offres=Offre::where('idRec','=',$user->id)->get();
+        //  $recruteur=Auth::user();
+          $recruteur=Recruteur::find($id);
+          $offres=Offre::where('idRec','=',$id)->get();
 
-           return view('pages.recruteur.recruteur_view_profile' , ['user'=>$user,'offres'=>$offres]);
+           return view('pages.recruteur.recruteur_view_profile' , ['recruteur'=>$recruteur,'offres'=>$offres]);
     }
 
 
 
 
-    public function offres() {
-        $user=Auth::guard('recruteur')->user();
-      $offres=Offre::where('idRec','=',$user->id)->get();
-      $offresActive=Offre::where('idRec','=',$user->id)->count();
+    public function offres($id) {
+        $recruteur=Recruteur::find($id);
+      $offres=Offre::where('idRec','=',$id)->get();
+      $offresActive=Offre::where('idRec','=',$id)->count();
       $totalApplied=0;
       foreach ($offres as $o) {
           $offreCandidature=Candidature::where('idOffre','=',$o->id)->count();
@@ -42,60 +43,59 @@ class RecruteurController extends Controller
       }
 
 
-       return view('pages.recruteur.recruteur_manage_jobs' , ['user'=>$user,'offres'=>$offres,'totalApplied'=>$totalApplied,'offresActive'=>$offresActive]);
+       return view('pages.recruteur.recruteur_manage_jobs' , ['recruteur'=>$recruteur,'offres'=>$offres,'totalApplied'=>$totalApplied,'offresActive'=>$offresActive]);
     }
 
 
 
 
-    public function edit()
+    public function edit($id)
     {
 
 
 
+          $recruteur=Recruteur::find($id);
 
-          $user=Auth::guard('recruteur')->user();
 
-           return view('pages.recruteur.recruteur_profile_settings' , ['user'=>$user]);
+           return view('pages.recruteur.recruteur_profile_settings' , ['recruteur'=>$recruteur]);
     }
 
 
 
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
 
+        $recruteur = Recruteur::find($id);
+        $hashedPassword = $recruteur->password;
 
-        $user=Auth::guard('recruteur')->user();
-        $hashedPassword = $user->password;
-
-if ($user and Hash::check($request->input('password'), $hashedPassword)) {
+if ($recruteur and Hash::check($request->input('password'), $hashedPassword)) {
 
           $file_name="";
         if($request->hasFile('img')){
                 $file = $request->file('img');
                 $file_name = time().'.'.$file->getClientOriginalExtension();
                 $file->move(public_path('/images/uploads/recruteurs'),$file_name);
-                  $user->logo = 'images/uploads/recruteurs/'.$file_name;
+                  $recruteur->logo = 'images/uploads/recruteurs/'.$file_name;
             }
             // else{
             //     $file_name="userDefault.png";
             // }
-            $user->nom = $request->input('nom');
+            $recruteur->nom = $request->input('nom');
 
-            $user->email = $request->input('email');
-            $user->num_tel= $request->input('num_tel');
-            $user->site_web= $request->input('website');
+            $recruteur->email = $request->input('email');
+            $recruteur->num_tel= $request->input('num_tel');
+            $recruteur->site_web= $request->input('website');
 
             if($request->input('new_password')!='')
-              $user->password=Hash::make($request->input('new_password'));
+              $recruteur->password=Hash::make($request->input('new_password'));
 
-            $user->save();
+            $recruteur->save();
 
-            return redirect('recruteur/profile');
+            return redirect('recruteur/'.$id.'/profile');
           }
           else {
-            return redirect('recruteur/'.$user->id.'/edit');
+            return redirect('recruteur/'.$id.'/edit');
           }
 
     }

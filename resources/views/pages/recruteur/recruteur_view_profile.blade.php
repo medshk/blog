@@ -31,13 +31,13 @@
                                  <div class="col-lg-10">
                                      <div class="job-single-head3 emplye">
                                          <div class="job-thumb">
-                                           @if(isset($user->logo))
-                                            <img src="{{asset($user->logo)}}" alt="" />
+                                           @if(isset($recruteur->logo))
+                                            <img src="{{asset($recruteur->logo)}}" alt="" />
                                             @endif
                                           </div>
                                          <div class="job-single-info3">
-                                             <h3>{{$user->nom}}</h3>
-                                             <span><i class="la la-map-marker"></i>{{$user->adress}}</span><span class="job-is ft">Full time</span>
+                                             <h3>{{$recruteur->nom}}</h3>
+                                             <span><i class="la la-map-marker"></i>{{$recruteur->adress}}</span><span class="job-is ft">Full time</span>
                                              <ul class="tags-jobs">
                                                  <li><i class="la la-file-text"></i> Applications 1</li>
                                                  <li><i class="la la-calendar-o"></i> Post Date: July 29, 2017</li>
