@@ -22,7 +22,11 @@
 	<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
 	<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 	<script src="{{asset('js/switching_forms.js?1500')}}" type="text/javascript"></script>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
 </head>
 <body>
     <div class="page-loading">
@@ -133,6 +137,7 @@
 	</footer>
 
 </div>
+<<<<<<< HEAD
 
 <script src="{{asset('js/jquery.min.js')}}" charset="utf-8"></script>
 <script src="{{asset('js/modernizr.js')}}" charset="utf-8"></script>
@@ -146,6 +151,19 @@
 <script src="{{asset('js/circle-progress.min.js')}}" charset="utf-8"></script>
 
 @yield('scripts')
+=======
+
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/modernizr.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/wow.min.js" type="text/javascript"></script>
+<script src="js/slick.min.js" type="text/javascript"></script>
+<script src="js/parallax.js" type="text/javascript"></script>
+<script src="js/select-chosen.js" type="text/javascript"></script>
+<script src="js/jquery.scrollbar.min.js" type="text/javascript"></script>
+<script src="js/circle-progress.min.js" type="text/javascript"></script>
+>>>>>>> parent of b371717... making of recruteur home showing statistques of market value and displaying candidates
 
 </body>
 

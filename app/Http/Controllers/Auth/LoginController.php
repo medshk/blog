@@ -38,17 +38,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:candidate')->except('logout');
-        $this->middleware('guest', ['except' => ['logout', 'logout']]);
     }
 
     public function candidate_login(Request $request)
     {
-       $this->validate($request ,[
+       /* $this->validate($request ,[
         'email' => 'required|email',
         'password' => 'required'
-         ] );
+         ] );*/
 
-    
+        
+         $dataAttempt = array(
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
+        );
        
   
 
@@ -62,32 +65,16 @@ class LoginController extends Controller
 
     public function recruteur_login(Request $request)
     {
-        
         $this->validate($request ,[
         'email' => 'required|email',
         'password' => 'required'
          ] );
 
 
-         if(auth::guard('recruteur')->attempt(['email' => $request->email,'password'=> $request->password],$request->get('remember')))
+         if(auth::guard('recruteur')->attempt(['email' => $request->email, 'password' => $request->password ]))
          {
-            
-            return redirect('/recruteur');
-        }
+            return redirect('guest');}
             else return "failure";
 
-    }
-
-
-
-    // logout the user whether it is candidate or recruteur
-
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-    
-        return $this->loggedOut($request) ?: redirect('guest');
     }
 }

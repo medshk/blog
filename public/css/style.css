@@ -1603,7 +1603,7 @@ label::after {
     color: #ffffff;
 }
 .layer.color.light::before {
-    background:#54285187;
+    background: #8b91dd;
     opacity: 0.9;
 }
 .reviews {
@@ -1678,7 +1678,7 @@ label::after {
     transform: rotate(-180deg);
 
     line-height: 30px;
-    color: #fb236a;
+    color: #8b91dd;
 }
 .reviews-sec {
     float: left;
@@ -3330,27 +3330,27 @@ header.style3 .menu-sec nav {
     background: #647585;
 }
 .pricetable.style2 .pricetable-head h2 {
-    color: #fb236a;
+    color: #7dc246;
 }
 .pricetable.style2 .pricetable-head h2 i {
     color: #A3A3A3;
 }
 .pricetable.style2 > a {
-    background: #857864;
+    background: #647585;
     color: #ffffff;
 }
 
 .pricetable.style2 > a:hover {
-    background: #fb236a;
+    background: #7dc246;
     color: #ffffff;
 }
 
 
 .pricetable.active.style2 {
-    background: #777066;
+    background: #647585;
 }
 .pricetable.active.style2 > a {
-    background: #fb236a;
+    background: #7dc246;
     color: #FFF;
 }
 .pricetable.style2.active .pricetable-head h2 {
@@ -4222,7 +4222,7 @@ header.style5 .logo {
    
 }
 .stats-sec.style2 .stats span {
-    color: #dc3573;
+    color: #26ae61;
 }
 .stats-sec.style2 .stats h5 {
     color: #333333;
