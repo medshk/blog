@@ -27,7 +27,7 @@ class CreateOffresTable extends Migration
             $table->string('salaire');
             $table->date('date_de_depot');
             $table->date('date_de_debut');
-            $table->enum('statut',['publiee','retiree']);
+            $table->enum('statut',['publiee','retiree','attente' ]);
             $table->string('duree');
             $table->unsignedbigInteger('idRec');
             $table->foreign('idRec')->references('id')->on('recruteurs');
