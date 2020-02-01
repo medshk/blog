@@ -71,7 +71,7 @@ class OffreController extends Controller
  //          $offre->photo = 'uploads/photo/offres/'.$file_name;
  //
           if(  $offre->save())
-            return redirect('/recruteur');
+            return redirect('/recruteur/profile');
           else
             return redirect('/create');
         }
@@ -135,7 +135,7 @@ class OffreController extends Controller
  //          $offre->photo = 'uploads/photo/offres/'.$file_name;
  //
         if(  $offre->save())
-          return redirect('/recruteur');
+          return redirect('/recruteur/profile');
           else
           return redirect('/create');
   }

@@ -70,18 +70,8 @@
 															 <!-- <li class="addedTag">Web Deisgn<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
 																<li class="addedTag">Web Develop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Develop"></li>
 																<li class="addedTag">SEO<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="SEO"></li> -->
-																<li class="tagAdd taglist">
-																	<select data-placeholder="Please Select Specialism" name="competence" class="chosen">
-																		<?php foreach ($comp as $c): ?>
-																					<option value="<?php echo $c->id ?>" @if($c->id==$offre->competence)selected @endif>{{$c->description}} {{$c->id}}</option>
-																		<?php endforeach; ?>
+																<input type="text" name="competence" placeholder="competence" value="{{$offre->competence}}" />
 
-
-
-
-																	</select>
-																</li>
-												</ul>
 											</div>
 
                     </div>
