@@ -150,7 +150,7 @@ class OffreController extends Controller
             $offre= Offre::find($id);
             if($offre){
                 $offre->delete();
-                return redirect('recruteur/offres');
+                return redirect('recruteur/'.$idRec.'/offres');
               }
               else {
                 return view('errors.404');
