@@ -85,7 +85,7 @@
         @if (!auth::guard('recruteur')->check())
             
         
-        <li ">
+        <li >
             <a href="" title="">Recruteurs</a>
            
         </li>
@@ -97,7 +97,7 @@
            
         </li>
         @endif
-        <li ">
+        <li >
             <a href="blog_list2.html" title="">Blog</a>
             <ul>
                 <li><a href="blog_list2.html">Blog List 2</a></li>
@@ -106,7 +106,7 @@
         </li>
         @if (!auth::guard('recruteur')->check())
         <li >
-            <a href="#" title="">Emploi</a>
+            <a href="offre/show" title="">Emploi</a>
            
         </li>
         @endif
