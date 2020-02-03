@@ -2,160 +2,156 @@
 @section('content')
 
 <div class="manage-jobs-sec">
-    <div class="border-title"><h3>Education</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
+
+<form action="{{url('cv')}}" method="POST">
+          {{csrf_field()}}
+
+<div class="border-title"><h3>CV</h3></div>
+    <div class="resumeadd-form">
+        <div class="row">
+            <div class="col-lg-6">
+                <span class="pf-title">Titre</span>
+                <div class="pf-field">
+                    <input placeholder="Tooms.." type="text" name="titre"  value="{{old('titre')}}">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <span class="pf-title">Divers</span>
+                <div class="pf-field">
+                    <input placeholder="Tooms.." type="text" name="diver"  value="{{old('diver')}}">
+                </div>
+                
+
+            </div>            
+        </div>
+    </div>
+
+
+
+
+    <div class="border-title"><h3>Formation</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
+    <div class="resumeadd-form">
+        <div class="row">
+            <div class="col-lg-6">
+                <span class="pf-title">Diplome</span>
+                <div class="pf-field">
+                    <input placeholder="Tooms.." type="text" name="diplome" id="diplome"  value="{{old('diplome')}}" >
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <span class="pf-title">Domaine</span>
+                <div class="pf-field">
+                    <input placeholder="Tooms.." type="text" name="domaine" id="domaine"  value="{{old('domaine')}}" >
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+					<span class="pf-title">Date de Début</span>
+						<div class="pf-field">
+													
+						   <input type="date" name="date_de_debutForm" id="date_de_debutForm"  value="{{old('date_de_debutForm')}}" >
+												</div>
+											</div>
+            
+                                            <div class="col-lg-6">
+					<span class="pf-title">Date de fin</span>
+						<div class="pf-field">
+													
+						   <input type="date" name="date_de_finForm" id="date_de_finForm"  value="{{old('date_de_finForm')}}" >
+												</div>
+											</div>
+
+            <div class="col-lg-12">
+                <span class="pf-title">Lieu</span>
+                <div class="pf-field">
+                    <input type="text" name="lieu" id="lieu"  value="{{old('lieu')}}" >
+                </div>
+            </div>
+            
+            
+         
+        </div>
+     
+    </div>
+
+
+    <div class="border-title"><h3>Experience</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
     <div class="resumeadd-form">
         <div class="row">
             <div class="col-lg-12">
-                <span class="pf-title">Title</span>
+                <span class="pf-title">Intitulé</span>
                 <div class="pf-field">
-                    <input placeholder="Tooms.." type="text">
+                    <input placeholder="Tooms.." id="intitule" type="text" name="intitule"  value="{{old('intitule')}}" onblur="disableTxt(this.form)">
                 </div>
             </div>
             <div class="col-lg-6">
-                <span class="pf-title">From Date</span>
-                <div class="pf-field">
-                    <input placeholder="06.11.2007" type="text" class="form-control datepicker">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <span class="pf-title">To Date</span>
-                <div class="pf-field">
-                    <input placeholder="06.11.2012" type="text" class="form-control datepicker">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <span class="pf-title">Institute</span>
-                <div class="pf-field">
-                    <input type="text">
-                </div>
-            </div>
+					<span class="pf-title">Date de debut</span>
+						<div class="pf-field">
+													
+						   <input type="date" id="date_de_debut" name="date_de_debut" value="{{old('date_de_debut')}}"  >
+												</div>
+											</div>
+            
+                                            <div class="col-lg-6">
+					<span class="pf-title">Date de fin</span>
+						<div class="pf-field">
+													
+						   <input type="date" id="date_de_fin" name="date_de_fin" value="{{old('date_de_fin')}}" >
+												</div>
+											</div>
+           
+            
             <div class="col-lg-12">
                 <span class="pf-title">Description</span>
                 <div class="pf-field">
-                    <textarea></textarea>
+                    <textarea name="descriptionExp" id="description"  value="{{old('descriptionExp')}}" ></textarea>
                 </div>
+                
             </div>
-            <div class="col-lg-12">
-                 <button type="submit">Save</button>
-            </div>
+          
         </div>
     </div>
-    <div class="border-title"><h3>Work Experience</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
+
+    <div class="border-title"><h3>Competences</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
     <div class="resumeadd-form">
         <div class="row">
-            <div class="col-lg-12">
-                <span class="pf-title">Title</span>
-                <div class="pf-field">
-                    <input placeholder="Tooms.." type="text">
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <span class="pf-title">From Date</span>
-                <div class="pf-field">
-                    <input placeholder="06.11.2007" type="text" class="form-control datepicker">
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <span class="pf-title">To Date</span>
-                <div class="pf-field">
-                    <input placeholder="06.11.2012" type="text" class="form-control datepicker">
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <p class="remember-label">
-                   <input type="checkbox" name="cb" id="fgfg"><label for="fgfg">Present</label>
-               </p>
-            </div>
-            <div class="col-lg-12">
-                <span class="pf-title">Company</span>
-                <div class="pf-field">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="col-lg-12">
+         
+        <div class="col-lg-12">
                 <span class="pf-title">Description</span>
                 <div class="pf-field">
-                    <textarea></textarea>
+                    <textarea name="description"  value="{{old('description')}}"></textarea>
                 </div>
-            </div>
-            <div class="col-lg-12">
+                <div class="col-lg-12">
                  <button type="submit">Save</button>
             </div>
-        </div>
-    </div>
-    <div class="border-title"><h3>Portfolio</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
-    <div class="resumeadd-form">
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Max file size is 1MB, Minimum dimension: 270x210 And Suitable files are .jpg & .png</p>
             </div>
-            <div class="col-lg-12">
-                <div class="upload-portfolio">
-                    <div class="uploadbox">
-                        <label for="file-upload" class="custom-file-upload">
-                           <i class="la la-cloud-upload"></i> <span>Upload Image</span>
-                       </label>
-                       <input id="file-upload" type="file" style="display: none;" />
-                    </div>
-                    <div class="uploadfield">
-                        <span class="pf-title">Title</span>
-                        <div class="pf-field">
-                            <input placeholder="Tooms.." type="text">
-                        </div>
-                    </div>
-                    <div class="uploadbutton">
-                        <button type="submit">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="border-title"><h3>Professional Skills</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
-    <div class="resumeadd-form">
-        <div class="row align-items-end">
-            <div class="col-lg-7">
-                <span class="pf-title">Skill Heading</span>
-                <div class="pf-field">
-                    <input placeholder="" type="text">
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <span class="pf-title">Percentage</span>
-                <div class="pf-field">
-                    <input placeholder="" type="text">
-                </div>
-            </div>
-            <div class="col-lg-2">
-                 <button type="submit">Save</button>
-            </div>
-        </div>
-    </div>
-    <div class="border-title"><h3>Awards</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
-    <div class="resumeadd-form">
-        <div class="row">
-            <div class="col-lg-6">
-                <span class="pf-title">06.11.2007</span>
-                <div class="pf-field">
-                    <input placeholder="" type="text">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <span class="pf-title">06.11.2012</span>
-                <div class="pf-field">
-                    <input placeholder="" type="text">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <span class="pf-title">Description</span>
-                <div class="pf-field">
-                    <textarea></textarea>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                 <button type="submit">Save</button>
-            </div>
-        </div>
-    </div>
+         
+
+    </form>
+
 </div>
 <!--mother div has class block remove-top -->
 @endsection
+
+
+<script type="text/javascript">
+ 
+ function disableTxt(tr) {
+    
+ var inti = tr.elements.intitule.value;
+if(inti === '' )
+   {
+    document.getElementById("description").disabled = true;
+  document.getElementById("date_de_debut").disabled =true;
+  document.getElementById("date_de_Fin").disabled = true;
+
+   }
+   else {
+    document.getElementById("description").disabled = false;
+  document.getElementById("date_de_debut").disabled =false;
+  document.getElementById("date_de_Fin").disabled = false;
+   }
+}
+</script>

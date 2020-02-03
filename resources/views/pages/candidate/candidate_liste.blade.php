@@ -119,126 +119,32 @@
                          </div>
                      </div>
                  </aside>
-                 <div class="col-lg-9 column">
-                     <div class="padding-left">
-                         <div class="emply-resume-sec">
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er1.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er2.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er3.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er4.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er5.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er6.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er7.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er8.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
-                             <div class="emply-resume-list">
-                                 <div class="emply-resume-thumb">
-                                     <img src="images/resource/er9.jpg" alt="" />
-                                 </div>
-                                 <div class="emply-resume-info">
-                                     <h3><a href="#" title="">Ali TUFAN</a></h3>
-                                     <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                                     <p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
-                                 </div>
-                                 <div class="shortlists">
-                                     <a href="#" title="">Shortlist <i class="la la-plus"></i></a>
-                                 </div>
-                             </div><!-- Emply List -->
+                          
+				 	<div class="col-lg-9 column">
+				 		<div class="padding-left">
+                      
+					 		<div class="emply-resume-sec">
+                             @foreach($candidats as $profil)
+                          
+					 			<div class="emply-resume-list round">
+					 				<div class="emply-resume-thumb">
+					 					<img src="images/resource/err1.jpg" alt="" />
+					 				</div>
+					 				<div class="emply-resume-info">
+					 					<h3><a href="#" title="">{{ $profil->name }} {{ $profil->prenom }}</a></h3>
+					 					<span><i>UX / UI Designer</i> at Atract Solutions</span>
+					 					<p><i class="la la-map-marker"></i>Tlemcen / Algérie</p>
+										
+					 				</div>
+					 				  <div class="shortlists">
+									 <a href="">consulter profil</a>
+					 				 </div>
+
+					 			</div><!-- Emply List -->
+                                 @endforeach
+					 			
+					 		
+					 			
                              <div class="pagination">
                                 <ul>
                                     <li class="prev"><a href="#"><i class="la la-long-arrow-left"></i> Prev</a></li>
