@@ -106,7 +106,7 @@
         </li>
         @if (!auth::guard('recruteur')->check())
         <li >
-            <a href="offre/show" title="">Emploi</a>
+        <a href="{{route('offreListe')}}" title="">Emploi</a>
            
         </li>
         @endif

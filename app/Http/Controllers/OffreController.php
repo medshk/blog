@@ -161,6 +161,65 @@ class OffreController extends Controller
   //show jobs list
 public function show()
 {
+
+
 return view('pages.offre.offre_liste');
+}
+
+
+// ajax function
+
+public function getKeyWord(Request $request)
+{
+$o = new Offre();
+if($request->ajax())
+{
+ $output = '<ul class="list-unstyled">';
+ $query = $request->get('query');
+ if($query != '')
+ {
+  $job =$o
+    ->where('intitule', 'like', '%'.$query.'%')
+    ->orWhere('type_contract', 'like', '%'.$query.'%')
+    ->get();
+    
+    $contract = $o
+    ->Where('type_contract', 'like', '%'.$query.'%')
+    ->get();
+
+    if($job->count() > 0)
+      {
+       foreach($job as $row)
+       {
+        $output .= '
+       <li>'.$row->intitule.'</li>
+        ';
+       }
+      }
+      else if($contract->count()>0)
+      {
+        foreach($contract as $row)
+        {
+        $output .= '
+        <li>'.$row->type_contract.'</li>
+         ';
+      }
+      }
+      else
+      {
+        $output .= '
+        <li>no data found</li>
+         ';
+      }
+$output .='</ul>' ;
+echo $output;  
+
+
+ }
+
+
+}
+
+
 }
 }

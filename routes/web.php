@@ -47,8 +47,10 @@ Route::post('recruteur_login','Auth\LoginController@recruteur_login')->name('rec
 
 
 Route::resource('offre', 'OffreController',[
-    'only' => ['index', 'create','store','edit','update','destroy','show']
+    'only' => ['index', 'create','store','edit','update','destroy',]
 ]);
+Route::get('offre/liste','OffreController@show')->name('offreListe');
+Route::get('offre/getKeyWord','OffreController@getKeyWord')->name('getKeyWord');
 
 Route::resource('recruteur', 'RecruteurController',[
     'only' => [ 'edit','update','destroy']
