@@ -48,34 +48,40 @@
 										 </div></div>
 			
 
-				<div id="{{$cv->id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#acc">
+				<div id="{{$cv->id}}" value="" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#acc">
       <div class="card-body">
 	
 								 <!-- <div class="border-title"><h3>{{$cv->titre}}</h3></div> -->
 
-										
+
+
+
+
 	 <div class="border-title"><h3> Formations</h3><a   onclick="myFunction()"  title=""><i class="la la-plus"></i> Ajouter formation</a></div>
 
 					 </div>
 
-				
+					 <form action="{{url('createForm/'.$cv->id)}}"  method="POST">
+          {{csrf_field()}}
 
-	<!-- <button onclick="myFunction()">Click Me</button> href="{{url('createForm/'.$cv->id.'/Aff')}}"    -->
-					 <div id="myDIV" style="display:none">
-<!-- -----------------------------------------------------------------------------------------------------------------------------------------								 -->
-    <div class="resumeadd-form">
+<div id="div"  style="display:none">
+
+
+
+
+<div class="resumeadd-form">
         <div class="row">
             <div class="col-lg-6">
                 <span class="pf-title">Diplome</span>
                 <div class="pf-field">
-                    <input placeholder="Tooms.." type="text" name="diplome" id="diplome"  value="{{old('diplome')}}" >
+                    <input placeholder="Tooms.." type="text" name="diplome">
                 </div>
             </div>
 
             <div class="col-lg-6">
                 <span class="pf-title">Domaine</span>
                 <div class="pf-field">
-                    <input placeholder="Tooms.." type="text" name="domaine" id="domaine"  value="{{old('domaine')}}" >
+                    <input placeholder="Tooms.." type="text" name="domaine">
                 </div>
             </div>
 
@@ -83,7 +89,7 @@
 					<span class="pf-title">Date de Début</span>
 						<div class="pf-field">
 													
-						   <input type="date" name="date_de_debutForm" id="date_de_debutForm"  value="{{old('date_de_debutForm')}}" >
+						   <input type="date" name="date_de_debut" value="">
 												</div>
 											</div>
             
@@ -91,29 +97,44 @@
 					<span class="pf-title">Date de fin</span>
 						<div class="pf-field">
 													
-						   <input type="date" name="date_de_finForm" id="date_de_finForm"  value="{{old('date_de_finForm')}}" >
+						   <input type="date" name="date_de_fin" value="">
 												</div>
 											</div>
 
             <div class="col-lg-12">
                 <span class="pf-title">Lieu</span>
                 <div class="pf-field">
-                    <input type="text" name="lieu" id="lieu"  value="{{old('lieu')}}" >
+                    <input type="text" name="lieu">
                 </div>
             </div>
-            
-            
-         
         </div>
-     
+			
     </div>
-	<div class="border-title"><a    title=""><i class="la la-plus"></i> Ajouter</a></div>		
+		<button type="submit" class="btn btn-outline-danger">Ajouter</button>
+
+	</form>
 
 </div>
+					
 
 
-								 @foreach($formations as $formation)
+
+							
+
+								
+
+	<!-- <button onclick="myFunction()">Click Me</button> href="{{url('createForm/'.$cv->id.'/Aff')}}"    -->
+					 
+<!-- -----------------------------------------------------------------------------------------------------------------------------------------								 -->
+
+
+
+@foreach($formations as $formation)
 												@if($formation->idCv == $cv->id)
+
+
+
+
 							 	<div class="edu-history-sec">		
 		 							<div class="edu-history">
 		 								<i class="la la-graduation-cap"></i>
@@ -144,7 +165,54 @@
 											@endforeach
 		 					
 							
-					       	<div class="border-title"><h3>Experience</h3><a href="{{url('createExp/'.$cv->id.'/Aff')}}" title=""><i class="la la-plus"></i> Ajouter Experience</a></div>
+					       	<div class="border-title"><h3>Experience</h3><a onclick="myFunction2()" title=""><i class="la la-plus"></i> Ajouter Experience</a></div>
+					
+<div id="divExp"  style="display:none" >
+<form action="{{url('createExp/'.$cv->id)}}"  method="POST">
+          {{csrf_field()}}
+		 
+									 <div class="resumeadd-form">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="pf-title">Intitulé</span>
+                <div class="pf-field">
+                    <input placeholder="Tooms.." id="intitule" type="text" name="intitule"  value="{{old('intitule')}}" onblur="disableTxt(this.form)">
+                </div>
+            </div>
+            <div class="col-lg-6">
+					<span class="pf-title">Date de debut</span>
+						<div class="pf-field">
+													
+						   <input type="date" id="date_de_debut" name="date_de_debut" value="{{old('date_de_debut')}}"  >
+												</div>
+											</div>
+            
+                                            <div class="col-lg-6">
+					<span class="pf-title">Date de fin</span>
+						<div class="pf-field">
+													
+						   <input type="date" id="date_de_fin" name="date_de_fin" value="{{old('date_de_fin')}}" >
+												</div>
+											</div>
+           
+            
+            <div class="col-lg-12">
+                <span class="pf-title">Description</span>
+                <div class="pf-field">
+                    <textarea name="descriptionExp" id="description"  value="{{old('descriptionExp')}}" ></textarea>
+                </div>
+                
+            </div>
+          
+        </div>
+    </div>
+		<button type="submit" class="btn btn-outline-danger">Ajouter</button>
+		</form>
+</div>
+
+					
+						
+						
 							   @foreach($experiences as $experience)
 												@if($experience->idCv == $cv->id)
 						
@@ -169,15 +237,44 @@
 				 						</ul>
 		 							</div>
 		 							
-		 						</div>
+									 </div>
 		 						
 					
 								 @endif	
 											@endforeach
 
 
-		 						<div class="border-title"><h3>compétences</h3><a href="{{url('createComp/'.$cv->id.'/Aff')}}" title=""><i class="la la-plus"></i> Ajouter compétence</a></div>
-							
+		 						<div class="border-title"><h3>compétences</h3><a onclick="myFunction3()" title=""><i class="la la-plus"></i> Ajouter compétence</a></div>
+								
+<div id="divcom" style="display:none">
+<form action="{{url('createComp/'.$cv->id)}}"  method="POST">
+          {{csrf_field()}}
+
+
+
+<div class="resumeadd-form">
+        <div class="row">
+         
+        <div class="col-lg-12">
+                <span class="pf-title">Description</span>
+                <div class="pf-field">
+                    <textarea name="description"  value="{{old('description')}}"></textarea>
+                </div>
+                <div class="col-lg-12">
+								<button type="submit" class="btn btn-outline-danger">Ajouter</button>
+            </div>
+            </div>
+         
+
+    </form>
+
+</div>
+</div>
+
+</form>
+</div>
+
+
 								 @foreach($competences as $competence)
 												@if($competence->idCv == $cv->id)
 								 <div class="edu-history-sec">
@@ -237,12 +334,54 @@
 
 
 function myFunction() {
-  var x = document.getElementById("myDIV");
+
+	//var y = document.getElementById("id").value;
+
+  var x = document.getElementById("div");
+ 
+	
+
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
+	
+}
+
+
+
+function myFunction2() {
+
+//var y = document.getElementById("id").value;
+
+var x = document.getElementById("divExp");
+
+
+
+if (x.style.display === "none") {
+	x.style.display = "block";
+} else {
+	x.style.display = "none";
+}
+
+}
+
+
+function myFunction3() {
+
+//var y = document.getElementById("id").value;
+
+var x = document.getElementById("divcom");
+
+
+
+if (x.style.display === "none") {
+	x.style.display = "block";
+} else {
+	x.style.display = "none";
+}
+
 }
 
 </script>

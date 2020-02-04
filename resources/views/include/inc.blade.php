@@ -163,20 +163,19 @@
 	<span class="close-profile"><i class="la la-close"></i></span>
 	<div class="can-detail-s">
 		<div class="cst"><img src="images/resource/es1.jpg" alt="" /></div>
-		<h3>David CARLOS</h3>
+		<h3>{{auth::guard('candidate')->user()->nom}} {{auth::guard('candidate')->user()->prenom}}</h3>
 		<span><i>UX / UI Designer</i> at Atract Solutions</span>
-		<p><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6300110602170a15060f021a061110535b5b23040e020a0f4d000c0e">[email&#160;protected]</a></p>
 		<p>Member Since, 2017</p>
-		<p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
+		<p><i class="la la-map-marker"></i>{{auth::guard('candidate')->user()->adress}}</p>
 	</div>
 	<div class="tree_widget-sec">
 		<ul>
-			<li><a href="candidates_profile.html" title=""><i class="la la-file-text"></i>My Profile</a></li>
-			<li><a href="candidates_my_resume.html" title=""><i class="la la-briefcase"></i>My Resume</a></li>
+			<li><a href="{{url('profil')}}" title=""><i class="la la-file-text"></i>Mon Profil</a></li>
+			<li><a href="{{url('resume')}}" title=""><i class="la la-briefcase"></i>Mon Resumé</a></li>
 			<li><a href="candidates_shortlist.html" title=""><i class="la la-money"></i>Shorlisted Job</a></li>
 			<li><a href="candidates_applied_jobs.html" title=""><i class="la la-paper-plane"></i>Applied Job</a></li>
 			<li><a href="candidates_job_alert.html" title=""><i class="la la-user"></i>Job Alerts</a></li>
-			<li><a href="candidates_cv_cover_letter.html" title=""><i class="la la-file-text"></i>Cv & Cover Letter</a></li>
+			<li><a href="{{url('resumevide')}}" title=""><i class="la la-file-text"></i>Crée Mon CV</a></li>
 			<li><a href="candidates_change_password.html" title=""><i class="la la-flash"></i>Change Password</a></li>
         <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li>
 		</ul>

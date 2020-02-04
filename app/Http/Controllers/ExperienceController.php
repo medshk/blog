@@ -31,7 +31,7 @@ class ExperienceController extends Controller
         $experience = new Experience();
        
         $experience->intitule =  $request->intitule;  
-        $experience->description =  $request->description; 
+        $experience->description =  $request->descriptionExp; 
         $experience->date_de_debut =  $request->date_de_debut;
         $experience->date_de_fin =  $request->date_de_fin;
         
