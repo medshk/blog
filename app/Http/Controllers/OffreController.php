@@ -158,9 +158,5 @@ class OffreController extends Controller
 
   }
 
-  //show jobs list
-public function show()
-{
-return view('pages.offre.offre_liste');
-}
+
 }

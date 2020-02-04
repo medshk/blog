@@ -87,26 +87,66 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="heading">
-                    <h2>Top Highest Candidates Registered</h2>
-                    <span>Some of the candidates we've helped build excellent carrier over the years.</span>
+                    <h2>Top Company Registered</h2>
+                    <span>Some of the companies we've helped recruit excellent applicants over the years.</span>
                 </div><!-- Heading -->
                 <div class="top-company-sec">
                     <div class="row" id="companies-carousel">
-                        @foreach ($candidates as $can)
-                            
-                       
                         <div class="col-lg-3">
                             <div class="team">
                                 <div class="team-img"><img src="images/resource/t1.jpg" alt="" /></div>
                                 <div class="team-detail">
-                                <h3><a href="#" title="">{{$can->prenom}} {{$can->nom}}</a></h3>
-                                    <span>WEB DESIGHNER</span>
-                                <p>{{$can->highRate}} points past the years</p>
+                                    <h3><a href="#" title="">Amanda Cook</a></h3>
+                                    <span>I Knew You Were Trouble</span>
+                                    <p>The Random Name Generator is a simple fiction writing tool…</p>
                                     <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
                                 </div>
                             </div><!-- Team -->
                         </div>
-                        @endforeach
+                        <div class="col-lg-3">
+                            <div class="team">
+                                <div class="team-img"><img src="images/resource/t2.jpg" alt="" /></div>
+                                <div class="team-detail">
+                                    <h3><a href="#" title="">İbrahim Agay</a></h3>
+                                    <span>Developer</span>
+                                    <p>The Random Name Generator is a simple fiction writing tool…</p>
+                                    <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
+                                </div>
+                            </div><!-- Team -->
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="team">
+                                <div class="team-img"><img src="images/resource/t3.jpg" alt="" /></div>
+                                <div class="team-detail">
+                                    <h3><a href="#" title="">Ali Tufan</a></h3>
+                                    <span>Senior UI / UX Designer</span>
+                                    <p>The Random Name Generator is a simple fiction writing tool…</p>
+                                    <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
+                                </div>
+                            </div><!-- Team -->
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="team">
+                                <div class="team-img"><img src="images/resource/t4.jpg" alt="" /></div>
+                                <div class="team-detail">
+                                    <h3><a href="#" title="">Juan Suso</a></h3>
+                                    <span>IT Outsource Company</span>
+                                    <p>The Random Name Generator is a simple fiction writing tool…</p>
+                                    <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
+                                </div>
+                            </div><!-- Team -->
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="team">
+                                <div class="team-img"><img src="images/resource/t2.jpg" alt="" /></div>
+                                <div class="team-detail">
+                                    <h3><a href="#" title="">Senimae Zuis</a></h3>
+                                    <span>Web Designer</span>
+                                    <p>The Random Name Generator is a simple fiction writing tool…</p>
+                                    <a href="#" title="">View Resume <i class="la la-long-arrow-right"></i></a>
+                                </div>
+                            </div><!-- Team -->
+                        </div>
                     </div>
                 </div>
             </div>
