@@ -82,47 +82,18 @@
             <a href="#" title="">Home</a>
 
         </li>
+        @if (!auth::guard('recruteur')->check())
         <li class="menu-item-has-children">
             <a href="#" title="">Recruteurs</a>
-            <ul>
-                <li><a href="employer_list1.html" title=""> Recruteur Liste </a></li>
-                <li><a href="employer_single1.html" title="">Recruteur Single </a></li>
-                <li class="menu-item-has-children">
-                    <a href="#" title="">Recruteur Dashboard</a>
-                    <ul>
-                        <li><a href="{{url('recruteur/1/offres')}}" title="">Gestion d'emploi </a></li>
-                        <li><a href="employer_packages.html" title="">Paquet</a></li>
-                        <li><a href="{{url('offre/create')}}" title="">Nouveau poste</a></li>
-                        <li><a href="{{url('recruteur/1/profile')}}" title="">Recruteur Profile</a></li>
-                        <li><a href="employer_resume.html" title=""> Résumé</a></li>
-                        <li><a href="employer_transactions.html" title="">Transaction</a></li>
-                        <li><a href="employer_job_alert.html" title="">Notification</a></li>
-                        <li><a href="{{url('recruteur/1/edit')}}" title="">Changer Modepasse</a></li>
-                    </ul>
-                </li>
-            </ul>
+        
         </li>
+        @endif
+        @if (!auth::guard('candidate')->check())
         <li class="menu-item-has-children">
             <a href="#" title="">Candidates</a>
-            <ul>
-                <li><a href="candidates_list.html" title="">Candidates List </a></li>
-                <li><a href="candidates_single.html" title="">Candidates Single </a></li>
-                <li class="menu-item-has-children">
-                    <a href="#" title="">Candidates Dashboard</a>
-                    <ul>
-                        <li><a href="candidates_my_resume.html" title="">Candidates Resume</a></li>
-                        <li><a href="candidates_my_resume_add_new.html" title="">Candidates Resume new</a></li>
-                        <li><a href="candidates_profile.html" title=""> Profile</a></li>
-                        <li><a href="candidates_shortlist.html" title="">Liste des traveaux</a></li>
-                        <li><a href="candidates_job_alert.html" title="">Alerte d'emploi</a></li>
-                        <li><a href="candidates_dashboard.html" title="">Candidates Dashboard</a></li>
-                        <li><a href="candidates_cv_cover_letter.html" title="">CV </a></li>
-                        <li><a href="candidates_change_password.html" title="">Changer Motedepasse</a></li>
-                        <li><a href="candidates_applied_jobs.html" title="">Emplois appliqués</a></li>
-                    </ul>
-                </li>
-            </ul>
+           
         </li>
+        @endif
         <li class="menu-item-has-children">
             <a href="blog_list2.html" title="">Blog</a>
             <ul>
