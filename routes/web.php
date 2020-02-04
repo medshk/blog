@@ -29,43 +29,11 @@ function () {
     return view('pages.guest');
 });
 
-Route::get('/candidate',
-function () {
+Route::get('/logout','Auth\LoginController@logout'
+)->name('logout');
 
-    return view('pages/candidate/candidate_shortlist');
-});
-Route::get('/candidat',
-function () {
-
-    return view('pages/candidate/candidate_dashboard');
-});
-Route::get('/recruteur',
-function () {
-
-    return view('pages.recruteur.recruteur_view_profile');
-});
-
-Route::get('/offre',
-function () {
-
-    return view('pages.offre.offre_view');
-});
-Route::get('/success',
-function () {
-
-    return view('pages.success');
-});
-
-Route::get('/inc',
-function () {
-    
-    return view('include.inc');
-});
-Route::get('/recruteur',
-function () {
-    
-    return view('pages/recruteur/recruteur_home');
-});
+Route::get('/recruteur','RecruteurHomeController@displayCandidates'
+);
     
 
 Auth::routes();
@@ -79,7 +47,7 @@ Route::post('recruteur_login','Auth\LoginController@recruteur_login')->name('rec
 
 
 Route::resource('offre', 'OffreController',[
-    'only' => ['index', 'create','store','edit','update','destroy']
+    'only' => ['index', 'create','store','edit','update','destroy','show']
 ]);
 
 Route::resource('recruteur', 'RecruteurController',[
