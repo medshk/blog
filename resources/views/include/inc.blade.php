@@ -52,16 +52,16 @@
         <!-- if recruteur-->
         @elseif(auth::guard('recruteur')->check())
         <div class="btns-profiles-sec">
-            <span><img src="images/resource/profile.jpg" alt="" />{{auth::guard('recruteur')->user()->nom}}<i class="la la-angle-down"></i></span>
+            <span><img src="images/resource/profile.jpg" alt="" /> Tera Planer <i class="la la-angle-down"></i></span>
             <ul>
-                <li><a href="recruteur/{{auth::guard('recruteur')->user()->id}}/profile" title=""><i class="la la-file-text"></i>Company Profile</a></li>
-                <li><a href="recruteur/{{auth::guard('recruteur')->user()->id}}/offres" title=""><i class="la la-briefcase"></i>Manage Jobs</a></li>
+                <li><a href="employer_profile.html" title=""><i class="la la-file-text"></i>Company Profile</a></li>
+                <li><a href="employer_manage_jobs.html" title=""><i class="la la-briefcase"></i>Manage Jobs</a></li>
                 <li><a href="employer_transactions.html" title=""><i class="la la-money"></i>Transactions</a></li>
                 <li><a href="employer_resume.html" title=""><i class="la la-paper-plane"></i>Resumes</a></li>
                 <li><a href="employer_packages.html" title=""><i class="la la-user"></i>Packages</a></li>
-                <li><a href="{{url('offre/create')}}" title=""><i class="la la-file-text"></i>Post a New Job</a></li>
+                <li><a href="employer_post_new.html" title=""><i class="la la-file-text"></i>Post a New Job</a></li>
                 <li><a href="employer_job_alert.html" title=""><i class="la la-flash"></i>Job Alerts</a></li>
-                <li><a href="recruteur/{{auth::guard('recruteur')->user()->id}}/edit" title=""><i class="la la-lock"></i>Change Password</a></li>
+                <li><a href="employer_change_password.html" title=""><i class="la la-lock"></i>Change Password</a></li>
                 <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li>
             </ul>
         </div>
@@ -82,22 +82,48 @@
             <a href="#" title="">Home</a>
 
         </li>
-        @if (!auth::guard('recruteur')->check())
-            
-        
-        <li >
-            <a href="" title="">Recruteurs</a>
-           
+        <li class="menu-item-has-children">
+            <a href="#" title="">Recruteurs</a>
+            <ul>
+                <li><a href="employer_list1.html" title=""> Recruteur Liste </a></li>
+                <li><a href="employer_single1.html" title="">Recruteur Single </a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" title="">Recruteur Dashboard</a>
+                    <ul>
+                        <li><a href="{{url('recruteur/1/offres')}}" title="">Gestion d'emploi </a></li>
+                        <li><a href="employer_packages.html" title="">Paquet</a></li>
+                        <li><a href="{{url('offre/create')}}" title="">Nouveau poste</a></li>
+                        <li><a href="{{url('recruteur/1/profile')}}" title="">Recruteur Profile</a></li>
+                        <li><a href="employer_resume.html" title=""> Résumé</a></li>
+                        <li><a href="employer_transactions.html" title="">Transaction</a></li>
+                        <li><a href="employer_job_alert.html" title="">Notification</a></li>
+                        <li><a href="{{url('recruteur/1/edit')}}" title="">Changer Modepasse</a></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
-        @endif
-
-        @if (!auth::guard('candidate')->check())
-        <li >
+        <li class="menu-item-has-children">
             <a href="#" title="">Candidates</a>
-           
+            <ul>
+                <li><a href="candidates_list.html" title="">Candidates List </a></li>
+                <li><a href="candidates_single.html" title="">Candidates Single </a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" title="">Candidates Dashboard</a>
+                    <ul>
+                        <li><a href="candidates_my_resume.html" title="">Candidates Resume</a></li>
+                        <li><a href="candidates_my_resume_add_new.html" title="">Candidates Resume new</a></li>
+                        <li><a href="candidates_profile.html" title=""> Profile</a></li>
+                        <li><a href="candidates_shortlist.html" title="">Liste des traveaux</a></li>
+                        <li><a href="candidates_job_alert.html" title="">Alerte d'emploi</a></li>
+                        <li><a href="candidates_dashboard.html" title="">Candidates Dashboard</a></li>
+                        <li><a href="candidates_cv_cover_letter.html" title="">CV </a></li>
+                        <li><a href="candidates_change_password.html" title="">Changer Motedepasse</a></li>
+                        <li><a href="candidates_applied_jobs.html" title="">Emplois appliqués</a></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
-        @endif
-        <li >
+        <li class="menu-item-has-children">
             <a href="blog_list2.html" title="">Blog</a>
             <ul>
                 <li><a href="blog_list2.html">Blog List 2</a></li>
@@ -109,7 +135,6 @@
         <a href="{{route('offreListe')}}" title="">Emploi</a>
            
         </li>
-        @endif
         <li class="menu-item-has-children">
             <a href="#" title="">Pages</a>
             <ul>
