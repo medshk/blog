@@ -79,7 +79,7 @@
 </style>
 
 <div class="profile-title" id="mp">
-    <h3>Profile de :  {{$recruteur->nom}}</h3>
+    <h3>My Profile</h3>
 
 
 </div>
@@ -88,12 +88,12 @@
     <input type="hidden" name="_method" value="PUT">
     {{ csrf_field() }}
         <div class="upload-img-bar">
-            <!-- <span><img src="{{$recruteur->logo}}" alt="" /><i>x</i></span>
+            <!-- <span><img src="{{$user->logo}}" alt="" /><i>x</i></span>
             <div class="upload-info">
                 <a href="#" title="">Browse</a>
                 <span>Max file size is 1MB, Minimum dimension: 270x210 And Suitable files are .jpg & .png</span>
             </div> -->
-            <div id='actualite-upload' @if(isset($recruteur->logo)) style="background-image:url('{{asset($recruteur->logo)}}')" @endif>
+            <div id='actualite-upload' @if(isset($user->logo)) style="background-image:url('{{asset($user->logo)}}')" @endif>
               <div class="hvr-profile-img">
                 <input type="file" name="img" id='actualite-photo'  class="upload w180" title="Dimensions 180 X 180" id="imag">
               </div>
@@ -108,36 +108,86 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <span class="pf-title">Nom Entreprise</span>
+                <span class="pf-title">Company Name</span>
                 <div class="pf-field">
-                    <input type="text" name="nom" value="{{$recruteur->nom}}" />
+                    <input type="text" name="nom" value="{{$user->nom}}" />
                 </div>
             </div>
             <div class="col-lg-6">
-                <span class="pf-title">Adresse Entreprise</span>
+                <span class="pf-title">Allow In Search</span>
                 <div class="pf-field">
-                    <input type="text" name="adresse" value="{{$recruteur->adress}}" />
+                    <select data-placeholder="Please Select Specialism" class="chosen">
+                       <option>Web Development</option>
+                       <option>Web Designing</option>
+                       <option>Art & Culture</option>
+                       <option>Reading & Writing</option>
+                   </select>
                 </div>
             </div>
+            <div class="col-lg-3">
+                <span class="pf-title">Since</span>
+                <div class="pf-field">
+                    <input type="text" placeholder="1991" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <span class="pf-title">Team Size</span>
+                <div class="pf-field">
+                    <input type="text" placeholder="100 - 201" />
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <span class="pf-title">Allow In Search</span>
+                <div class="pf-field">
+                    <select data-placeholder="Please Select Specialism" class="chosen">
+                       <option>Web Development</option>
+                       <option>Web Designing</option>
+                       <option>Art & Culture</option>
+                       <option>Reading & Writing</option>
+                   </select>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <span class="pf-title">Categories</span>
+                <div class="pf-field no-margin">
+                    <ul class="tags">
+                      <li class="addedTag">Web Deisgn<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
+                       <li class="addedTag">Web Develop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Develop"></li>
+                       <li class="addedTag">SEO<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="SEO"></li>
+                       <li class="tagAdd taglist">
+                              <input type="text" id="search-field">
+                       </li>
+                   </ul>
+               </div>
+            </div>
+            <div class="col-lg-12">
+                <span class="pf-title">Description</span>
+                <div class="pf-field">
+                    <textarea>Spent several years working on sheep on Wall Street. Had moderate success investing in Yugos on Wall Street. Managed a small team buying and selling pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed severalnew methods for working with banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer ollaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present</textarea>
+                </div>
+            </div>
+            <!-- <div class="col-lg-12">
+                <button type="submit">Update</button>
+            </div> -->
         </div>
-        <h3>Profile</h3>
+        <h3>Contact</h3>
         <div class="row">
             <div class="col-lg-4">
-                <span class="pf-title">Numero téléphone</span>
+                <span class="pf-title">Phone Number</span>
                 <div class="pf-field">
-                    <input type="text" name="num_tel" value="{{$recruteur->num_tel}}" />
+                    <input type="text" name="num_tel" value="{{$user->num_tel}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Email</span>
                 <div class="pf-field">
-                    <input type="text" name="email" value="{{$recruteur->email}}" />
+                    <input type="text" name="email" value="{{$user->email}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Website</span>
                 <div class="pf-field">
-                    <input type="text" name="website" value="{{$recruteur->site_web}}" />
+                    <input type="text" name="website" value="{{$user->site_web}}" />
                 </div>
             </div>
 
@@ -151,7 +201,7 @@
             <div class="col-lg-4">
                 <span class="pf-title">Email</span>
                 <div class="pf-field">
-                    <input type="text" name="email" value="{{$recruteur->email}}" />
+                    <input type="text" name="email" value="{{$user->email}}" />
                 </div>
             </div>
             <div class="col-lg-4">
@@ -216,19 +266,19 @@
             <div class="col-lg-4">
                 <span class="pf-title">Phone Number</span>
                 <div class="pf-field">
-                    <input type="text" name="num_tel" placeholder="{{$recruteur->num_tel}}" />
+                    <input type="text" name="num_tel" placeholder="{{$user->num_tel}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Email</span>
                 <div class="pf-field">
-                    <input type="text" name="email" placeholder="{{$recruteur->email}}" />
+                    <input type="text" name="email" placeholder="{{$user->email}}" />
                 </div>
             </div>
             <div class="col-lg-4">
                 <span class="pf-title">Website</span>
                 <div class="pf-field">
-                    <input type="text" placeholder="{{$recruteur->site_web}}" />
+                    <input type="text" placeholder="{{$user->site_web}}" />
                 </div>
             </div>
             <div class="col-lg-6">

@@ -55,7 +55,7 @@ class RecruteurController extends Controller
 
           $user=Auth::guard('recruteur')->user();
 
-           return view('pages.recruteur.recruteur_profile_settings' , ['recruteur'=>$user,'user'=>$user]);
+           return view('pages.recruteur.recruteur_profile_settings' , ['user'=>$user]);
     }
 
 
