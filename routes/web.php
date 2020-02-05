@@ -98,7 +98,7 @@ function () {
     
 
 Auth::routes();
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'HomeController@show')->name('home');
 Route::post('/register_candidate','Auth\RegisterController@create_candidate')->name('register_candidate');
 Route::post('/register_recruteur','Auth\RegisterController@create_recruteur')->name('register_recruteur');
