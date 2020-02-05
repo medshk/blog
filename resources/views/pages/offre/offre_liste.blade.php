@@ -29,16 +29,16 @@
                  <aside class="col-lg-3 column border-right">
                      <div class="widget">
                          <div class="search_widget_job">
-                             <div class="field_w_search">
+                             <div class="field_w_search" >
                                  <input type="text" id="kword" placeholder="Search Keywords" />
                                  <i class="la la-search"></i>
+                                 <div id="kWordList" class="dropdown-menu"></div>
                              </div><!-- Search Widget -->
-                             <div id="kWordList">
-
-                             </div>
+                            
                              <div class="field_w_search">
-                                 <input type="text" id="loc"placeholder="All Locations" />
+                                 <input type="text" id="loc" placeholder="All Locations" />
                                  <i class="la la-map-marker"></i>
+                                 <div id="locList" class="dropdown-menu"></div>
                              </div><!-- Search Widget -->
                          </div>
                      </div>
@@ -116,10 +116,11 @@
                  </aside>
                  <div class="col-lg-9 column">
                      <div class="modrn-joblist">
-                         <div class="tags-bar">
+                         <div class="tags-bar" id="search_bar">
                              <span>Full Time<i class="close-tag">x</i></span>
                              <span>UX/UI Design<i class="close-tag">x</i></span>
                              <span>Istanbul<i class="close-tag">x</i></span>
+                             <span>yooo<i class="close-tag">x</i></span>
                              <div class="action-tags">
                                  <a href="#" title=""><i class="la la-cloud-download"></i> Save</a>
                                  <a href="#" title=""><i class="la la-trash-o"></i> Clean</a>

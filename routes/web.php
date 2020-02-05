@@ -112,6 +112,7 @@ Route::resource('offre', 'OffreController',[
 ]);
 Route::get('offre/liste','OffreController@show')->name('offreListe');
 Route::get('offre/getKeyWord','OffreController@getKeyWord')->name('getKeyWord');
+Route::get('offre/getLocation','OffreController@getLocation')->name('getLocation');
 
 Route::resource('recruteur', 'RecruteurController',[
     'only' => [ 'edit','update','destroy']
