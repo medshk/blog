@@ -346,6 +346,43 @@
  
  </div>
 
+<!--chart 5-->
+<div class="account-popup-area signin-popup-box" id="myChart5"  >
+    <div id="tester4" class="heading" ></div>
+     
+    
+         
+    <div class="dropdown-field col-lg-3"  id="typeselectDiv" >
+        <select id="typeSelect" onchange="getOffre()" class="chosen">
+            <?php
+                
+                   $date_parts1 = explode("-",auth::guard('recruteur')->user()->created_at );
+                   $date_parts2 = explode("-", date('Y-m-d'));
+                  $years=[];
+                   for($y=$date_parts1[0];$y<=$date_parts2[0];$y++)
+                   {
+                array_push($years,$y);
+                
+                   }
+                  
+                 
+            foreach ($years as $year)
+                
+           {
+                ?>
+           
+        <option value='<?php echo $year ;?>' selected="selected"><?php echo $year ;?></option>
+           <?php }?>
+     
+    </select>
+    <span style="color:#fb236a;">Année<span>
+        </div>
+       
+            
+         
+ 
+ </div>
+
 
 <script src="{{asset('js/mychart.js?1500')}}"></script>
 @endsection
