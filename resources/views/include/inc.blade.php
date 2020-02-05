@@ -61,7 +61,7 @@
                 <li><a href="employer_packages.html" title=""><i class="la la-user"></i>Packages</a></li>
                 <li><a href="employer_post_new.html" title=""><i class="la la-file-text"></i>Post a New Job</a></li>
                 <li><a href="employer_job_alert.html" title=""><i class="la la-flash"></i>Job Alerts</a></li>-->
-                <li><a href="{{url('recruteur/'.auth::guard('recruteur')->user()->id.'/edit')}}" title=""><i class="la la-lock"></i>Change Password</a></li>
+                <li><a href="{{url('recruteur/'.auth::guard('recruteur')->user()->id.'/edit')}}" title=""><i class="la la-lock"></i>Changer Profile</a></li>
                 <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li>
             </ul>
         </div>
@@ -106,7 +106,6 @@
         <a href="{{route('offreListe')}}" title="">Emploi</a>
            
         </li>
-        @endif
         <li class="menu-item-has-children">
             <a href="#" title="">Pages</a>
             <ul>
@@ -123,6 +122,8 @@
             </ul>
         </li>
     </ul>
+    @endif
+     
 </nav><!-- Menus -->
     </div>
 </div>

@@ -79,7 +79,7 @@
 </style>
 
 <div class="profile-title" id="mp">
-    <h3>My Profile</h3>
+    <h3>Profile de :  {{$recruteur->nom}}</h3>
 
 
 </div>
@@ -108,72 +108,22 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <span class="pf-title">Company Name</span>
+                <span class="pf-title">Nom Entreprise</span>
                 <div class="pf-field">
                     <input type="text" name="nom" value="{{$recruteur->nom}}" />
                 </div>
             </div>
             <div class="col-lg-6">
-                <span class="pf-title">Allow In Search</span>
+                <span class="pf-title">Adresse Entreprise</span>
                 <div class="pf-field">
-                    <select data-placeholder="Please Select Specialism" class="chosen">
-                       <option>Web Development</option>
-                       <option>Web Designing</option>
-                       <option>Art & Culture</option>
-                       <option>Reading & Writing</option>
-                   </select>
+                    <input type="text" name="adresse" value="{{$recruteur->adress}}" />
                 </div>
             </div>
-            <div class="col-lg-3">
-                <span class="pf-title">Since</span>
-                <div class="pf-field">
-                    <input type="text" placeholder="1991" />
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <span class="pf-title">Team Size</span>
-                <div class="pf-field">
-                    <input type="text" placeholder="100 - 201" />
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <span class="pf-title">Allow In Search</span>
-                <div class="pf-field">
-                    <select data-placeholder="Please Select Specialism" class="chosen">
-                       <option>Web Development</option>
-                       <option>Web Designing</option>
-                       <option>Art & Culture</option>
-                       <option>Reading & Writing</option>
-                   </select>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <span class="pf-title">Categories</span>
-                <div class="pf-field no-margin">
-                    <ul class="tags">
-                      <li class="addedTag">Web Deisgn<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
-                       <li class="addedTag">Web Develop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Develop"></li>
-                       <li class="addedTag">SEO<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="SEO"></li>
-                       <li class="tagAdd taglist">
-                              <input type="text" id="search-field">
-                       </li>
-                   </ul>
-               </div>
-            </div>
-            <div class="col-lg-12">
-                <span class="pf-title">Description</span>
-                <div class="pf-field">
-                    <textarea>Spent several years working on sheep on Wall Street. Had moderate success investing in Yugos on Wall Street. Managed a small team buying and selling pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed severalnew methods for working with banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer ollaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present</textarea>
-                </div>
-            </div>
-            <!-- <div class="col-lg-12">
-                <button type="submit">Update</button>
-            </div> -->
         </div>
-        <h3>Contact</h3>
+        <h3>Profile</h3>
         <div class="row">
             <div class="col-lg-4">
-                <span class="pf-title">Phone Number</span>
+                <span class="pf-title">Numero téléphone</span>
                 <div class="pf-field">
                     <input type="text" name="num_tel" value="{{$recruteur->num_tel}}" />
                 </div>

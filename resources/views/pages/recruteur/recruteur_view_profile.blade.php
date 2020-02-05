@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-header">
-                        <h3>Employer Single</h3>
+                        <h3>Profile Entreprise</h3>
                     </div>
                 </div>
             </div>
@@ -37,12 +37,7 @@
                                           </div>
                                          <div class="job-single-info3">
                                              <h3>{{$user->nom}}</h3>
-                                             <span><i class="la la-map-marker"></i>{{$user->adress}}</span><span class="job-is ft">Full time</span>
-                                             <ul class="tags-jobs">
-                                                 <li><i class="la la-file-text"></i> Applications 1</li>
-                                                 <li><i class="la la-calendar-o"></i> Post Date: July 29, 2017</li>
-                                                 <li><i class="la la-eye"></i> Views 5683</li>
-                                             </ul>
+                                             <span><i class="la la-map-marker"></i>{{$user->adress}}</span>
                                          </div>
                                      </div><!-- Job Head -->
                                  </div>
@@ -61,99 +56,50 @@
                              <div class="row">
                                  <div class="col-lg-8 column">
                                      <div class="job-details">
-                                         <h3>About Business Network</h3>
-                                         <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered inset one echidna cassowary some parrot and much as goodness some froze the sullen much connected bat wonderfully on instantaneously eel valiantly petted this along across highhandedly much. </p>
-                                         <p>Repeatedly dreamed alas opossum but dramatically despite expeditiously that jeepers loosely yikes that as or eel underneath kept and slept compactly far purred sure abidingly up above fitting to strident wiped set waywardly far the and pangolin horse approving paid chuckled cassowary oh above a much opposite far much hypnotically more therefore wasp less that hey apart well like while superbly orca and far hence one.Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy.</p>
-                                         <ul>
-                                             <li>Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)</li>
-                                             <li>Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)</li>
-                                             <li>Cross-browser and platform testing as standard practice</li>
-                                             <li>Experience using Invision a plus</li>
-                                             <li>Experience in video production a plus or, at a minimum, a willingness to learn</li>
-                                         </ul>
-                                         <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered inset one echidna cassowary some parrot and much as goodness some froze the sullen much connected bat wonderfully on instantaneously eel valiantly petted this along across highhandedly much. </p>
-                                         <p>Repeatedly dreamed alas opossum but dramatically despite expeditiously that jeepers loosely yikes that as or eel underneath kept and slept compactly far purred sure abidingly up above fitting to strident wiped set waywardly far the and pangolin horse approving paid chuckled cassowary oh above a much opposite far much hypnotically more therefore wasp less that hey apart well like while superbly orca and far hence one.Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy.</p>
-                                     </div>
-                                     <div class="recent-jobs">
-                                         <h3>Jobs from Business Network</h3>
-                                         <div class="job-list-modern">
-                                             <div class="job-listings-sec no-border">
-                                                <div class="job-listing wtabs noimg">
-                                                    <div class="job-title-sec">
-                                                        <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                                                        <span>Massimo Artemisis</span>
-                                                        <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
-                                                    </div>
-                                                    <div class="job-style-bx">
-                                                        <span class="job-is ft">Full time</span>
-                                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
-                                                        <i>5 months ago</i>
-                                                    </div>
-                                                </div>
-                                                <div class="job-listing wtabs noimg">
-                                                    <div class="job-title-sec">
-                                                        <h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
-                                                        <span>Massimo Artemisis</span>
-                                                        <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
-                                                    </div>
-                                                    <div class="job-style-bx">
-                                                        <span class="job-is pt ">Part time</span>
-                                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
-                                                        <i>5 months ago</i>
-                                                    </div>
-                                                </div><!-- Job -->
-                                                <div class="job-listing wtabs noimg">
-                                                    <div class="job-title-sec">
-                                                        <h3><a href="#" title="">Regional Sales Manager South</a></h3>
-                                                        <span>Massimo Artemisis</span>
-                                                        <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
-                                                    </div>
-                                                    <div class="job-style-bx">
-                                                        <span class="job-is ft ">Full time</span>
-                                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
-                                                        <i>5 months ago</i>
-                                                    </div>
-                                                </div><!-- Job -->
-                                                <div class="job-listing wtabs noimg">
-                                                    <div class="job-title-sec">
-                                                        <h3><a href="#" title="">Marketing Dairector</a></h3>
-                                                        <span>Massimo Artemisis</span>
-                                                        <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
-                                                    </div>
-                                                    <div class="job-style-bx">
-                                                        <span class="job-is ft ">Full time</span>
-                                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
-                                                        <i>5 months ago</i>
-                                                    </div>
-                                                </div><!-- Job -->
-                                            </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="col-lg-4 column">
-                                     <div class="job-overview">
-                                         <h3>Company Information</h3>
-                                         <ul>
-                                             <li><i class="la la-eye"></i><h3>Viewed </h3><span>164</span></li>
-                                             <li><i class="la la-file-text"></i><h3>Posted Jobs</h3><span>{{$offres->count()}}</span></li>
-                                             <li><i class="la la-map"></i><h3>Locations</h3><span>United States, San Diego</span></li>
-                                             <li><i class="la la-bars"></i><h3>Categories</h3><span>Arts, Design, Media</span></li>
-                                             <li><i class="la la-clock-o"></i><h3>Since</h3><span>2002</span></li>
-                                             <li><i class="la la-users"></i><h3>Team Size</h3><span>15</span></li>
-                                             <li><i class="la la-user"></i><h3>Followers</h3><span>15</span></li>
-                                         </ul>
-                                     </div><!-- Job Overview -->
-                                     <div class="quick-form-job">
-                                         <h3>Contact Business Network</h3>
-                                         <form>
-                                             <input type="text" placeholder="Enter your Name *" />
-                                             <input type="text" placeholder="Email Address*" />
-                                             <input type="text" placeholder="Phone Number" />
-                                             <textarea placeholder="Message should have more than 50 characters"></textarea>
-                                             <button class="submit">Send Email</button>
-                                             <span>You accepts our <a href="#" title="">Terms and Conditions</a></span>
-                                         </form>
-                                     </div>
+                                         <h3>A propos de <b>{{$user->nom}}</b></h3>
+<br>
+<style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+ 
+<div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat:35.7300362 , lng: -0.5852167};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 10, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARNL0H7Pvr1Rfo16dBoM55iuPOdjomTvs&sensor=false&callback=initMap">
+    </script>
+ 
+                                        <h3>Adresse :</h3>
+                                          <h4>{{$user->adress}}</h4>
+<br><br>
+                                        <h3>site web :</h3>
+                                          <h4>{{$user->site_web}}</h4>
+                                          <br><br>
+
+                                        <h3>numuro de téléphone :</h3>
+                                          <h4>{{$user->num_tel}}</h4>
+                                          <br><br>
+                                          
+                                      </div>
                                  </div>
                              </div>
                          </div>
