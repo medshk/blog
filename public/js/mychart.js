@@ -304,3 +304,99 @@ function displayCryptoChart()
    
     
   });
+
+
+  // nmbre d'offre par moi 
+
+  function displayOffreChart()
+  {
+  
+    document.getElementById("myChart4").style.display = "block";
+    document.getElementById("tester4").style.position = "absolute";
+    document.getElementById("tester4").style.width = "1100px";
+    document.getElementById("tester4").style.left = "9.5%";
+    document.getElementById("tester4").style.top = "4%";
+   document.getElementById("tester4").addEventListener('click',function ()
+   {
+    event.stopPropagation();
+      }  ); 
+  
+    //
+    document.getElementById("offreselectDiv").style.top = "4.1%";
+    document.getElementById("offreselectDiv").style.left = "8.4%";
+    document.getElementById("offreselectDiv").style.width = "200px";
+   document.getElementById("offreselectDiv").addEventListener('click',function ()
+   {
+    event.stopPropagation();
+      }  ); 
+      //
+      document.getElementById("offreselectDiv2").style.top = "4.1%";
+      document.getElementById("offreselectDiv2").style.left = "8.4%";
+      document.getElementById("offreselectDiv2").style.width = "200px";
+     document.getElementById("offreselectDiv2").addEventListener('click',function ()
+     {
+      event.stopPropagation();
+        }  ); 
+    }
+
+    // hide chart 4
+    $(document).ready(function(){
+  
+ 
+      $("#myChart4").click(function(){
+        $("#myChart4").hide();
+        $("html").removeClass("js no-touch cssanimations csstransitions no-scroll");
+        $("html").addClass("js no-touch cssanimations csstransitions");
+       
+      });
+     
+    
+     
+      
+    });
+
+    async function getOffre() {
+  
+      var e = document.getElementById("offreSelect");
+      var e1 = document.getElementById("offreSelect2");
+      
+        let fromSymbol = e.options[e.selectedIndex].value;
+        let toSymbol = e1.options[e1.selectedIndex].value;
+
+        $.ajax({  
+          url:"getKeyWord",  
+          method:"GET",  
+          data:{query:query},  
+          success:function(data)  
+          {  
+               console.log(data);
+               
+          }  
+     }); 
+     
+        
+    TESTER = document.getElementById('tester4');
+    Plotly.purge(TESTER);
+    // it workeeeeeeeeeeeed yey!
+      Plotly.plot( TESTER, [{
+        x: xAxe,
+      y: yAxe,
+      mode:'line',
+        name:`${toSymbol}`,
+        line:{
+        color:'rgb(255, 7, 115)'
+      }
+        
+      }], {
+      title:`pffre par moi` ,
+      yaxis:{title:`${toSymbol}`},
+      autosize: false,
+      width: 1100,
+      height: 500,
+      
+    
+    } 
+      
+      );
+    
+    }

@@ -80,6 +80,78 @@
     </div>
 </section>
 
+<!-- web site statistiques-->
+<section>
+    <div class="block  gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading">
+                        <h2>Statistiques sur les offres</h2>
+                        <span></span>
+                    </div><!-- Heading -->
+                    <div class="job-grid-sec">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">Stock Market Value</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getdata();displayChart()" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            <!-- exchage rate chart-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">Forex Exchange Rate</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getExchangedata();displayExchangeChart()" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            <!-- cryptocurrencies exchange rate-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">Cryptocurrencies Exchange Rate</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getCryptodata();displayCryptoChart();" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">Cryptocurrencies Exchange Rate</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getCryptodata();displayCryptoChart();" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            
+                           
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- top highest rate candidate section-->
 <section>
 <div class="block gray">
@@ -235,6 +307,44 @@
          
  
  </div>
+
+ <!-- offers number by month-->
+
+ <div class="account-popup-area signin-popup-box" id="myChart4"  >
+    <div id="tester4" class="heading" ></div>
+     
+    
+         
+    <div class="dropdown-field col-lg-3"  id="offreselectDiv" >
+        <select id="offreSelect" onchange="" class="chosen">
+            {{$query=DB::table('recruteurs')->get()}}
+            @foreach ($query as $row)
+                
+           
+        <option value="USD" selected="selected">{{$row->nom}}</option>
+       @endforeach
+     
+    </select>
+    <span style="color:#fb236a;">entreprise<span>
+        </div>
+        <div class="dropdown-field col-lg-3"  id="offreselectDiv2" >
+           <select id="offreSelect2" onchange="getExchangedata()" class="chosen">
+         <option value="USD" >Dollar</option>
+         <option value="EUR">EURO</option>
+         <option value="DZD" selected="selected">DINAR</option>
+         <option value="GBP">Pound</option>
+         <option value="CHF">franc Suisse</option>
+        
+       </select>
+       <span style="color:#fb236a;">année<span>
+
+       
+           </div>
+            
+         
+ 
+ </div>
+
 
 <script src="{{asset('js/mychart.js?1500')}}"></script>
 @endsection
