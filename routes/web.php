@@ -157,3 +157,4 @@ Route::post('createComp/{id}','CompetenceController@create');
 Route::delete('deleteCv/{id}', 'CvController@destroyCv');
 
 Route::get('list','CandidateController@listprofil');
+Route::get('single/{id}/show','CandidateController@single');
