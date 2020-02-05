@@ -128,16 +128,16 @@
                           
 					 			<div class="emply-resume-list round">
 					 				<div class="emply-resume-thumb">
-					 					<img src="images/resource/err1.jpg" alt="" />
+					 					<img src="{{ asset('uploads/candidat/'.$profil->photo)}}" alt="" />
 					 				</div>
 					 				<div class="emply-resume-info">
-					 					<h3><a href="#" title="">{{ $profil->name }} {{ $profil->prenom }}</a></h3>
+					 					<h3><a href="#" title="">{{ $profil->nom }} {{ $profil->prenom }}</a></h3>
 					 					<span><i>UX / UI Designer</i> at Atract Solutions</span>
 					 					<p><i class="la la-map-marker"></i>Tlemcen / Algérie</p>
 										
 					 				</div>
 					 				  <div class="shortlists">
-									 <a href="">consulter profil</a>
+									 <a href="{{url('single/'.$profil->id.'/show')}}">consulter profil</a>
 					 				 </div>
 
 					 			</div><!-- Emply List -->
