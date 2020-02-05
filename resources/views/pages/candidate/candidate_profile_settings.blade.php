@@ -66,46 +66,6 @@
 
 					 					
 					 					
-					 					<div class="col-lg-4">
-					 						<span class="pf-title">Niveau de la carriére</span>
-					 						<div class="pf-field">
-													<select data-placeholder="Allow In Search" class="chosen">
-															<option>Amateur</option>
-															<option>Intermediaire</option>
-															<option>Specialiste</option>
-															<option>Expert</option>
-															
-														</select>
-					 						</div>
-					 					</div>
-					 					<div class="col-lg-4">
-					 						<span class="pf-title">Experience</span>
-					 						<div class="pf-field">
-					 							<select data-placeholder="Allow In Search" class="chosen">
-													<option>0 année</option>
-													<option>1-2 ans</option>
-													<option>2-3 ans</option>
-													<option>3-4 ans</option>
-													<option>4-5 ans</option>
-													<option>5-6 ans</option>
-													<option>6 ans - ..</option>
-												</select>
-					 						</div>
-					 					</div>
-					 					
-					 					
-					 				
-					 					<div class="col-lg-4">
-					 						<span class="pf-title">Niveau d'études</span>
-					 						<div class="pf-field">
-					 							<select data-placeholder="Please Select Specialism" class="chosen">
-													<option>BAC</option>
-													<option>BAC+1</option>
-													<option>BAC+2</option>
-													<option>BAC+3</option>
-												</select>
-					 						</div>
-					 					</div>
 					 					
 					 					
 					 					

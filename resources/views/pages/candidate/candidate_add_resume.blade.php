@@ -3,7 +3,7 @@
 
 <div class="manage-jobs-sec">
 
-<form action="{{url('cv')}}" method="POST">
+<form action="{{url('cv')}}" method="POST" enctype="multipart/form-data">
           {{csrf_field()}}
 
 <div class="border-title"><h3>CV</h3></div>
@@ -124,12 +124,51 @@
                 <div class="pf-field">
                     <textarea name="description"  value="{{old('description')}}"></textarea>
                 </div>
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                  <button type="submit">Save</button>
+            </div> -->
             </div>
-            </div>
-         
+            <div class="border-title"><h3>Autre Documents</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
+            <div class="col-lg-12">
 
+            <div class="col-lg-12">
+													<span class="pf-title">Type</span>
+													<div class="pf-field">
+                                                    <select data-placeholder="Please Select Specialism" name="TypeDoc" class="chosen" value="">
+									 <option value="CV">CV</option>
+									 <option value="diplome">diplome</option>
+									 <option value="lettre">Lettre de motivation</option>
+									 <option value="certif">certificat</option>
+									 <option value="autre">autre</option>
+								 </select>
+													</div>
+												</div>
+
+					 						<div class="upload-portfolio">
+					 								
+						
+					 							<div class="uploadfield">
+							 						<span class="pf-title">Nom</span>
+							 						<div class="pf-field">
+							 							<input placeholder="Tooms.." type="text" name="NomDoc">
+							 						</div>
+							 					</div>
+                                                 <div class="upload-img-bar">
+							
+				
+                            <input type="file" name="Doc" class="form-control">
+   
+                            </div>
+							 					
+					 						</div>
+					 					</div>
+
+
+                                         <div class="uploadbutton">
+							 						<button type="submit">Save</button>
+							 					</div>
+<!-- ------------------------------------------------------------------------- -->
     </form>
 
 </div>

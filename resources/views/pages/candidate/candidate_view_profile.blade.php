@@ -52,75 +52,81 @@
 				 				<a href="#" title="" class="share-google"><i class="la la-google"></i></a><a href="#" title="" class="share-fb"><i class="fa fa-facebook"></i></a><a href="#" title="" class="share-twitter"><i class="fa fa-twitter"></i></a>
 				 			</div>
 				 			<div class="can-detail-s">
-				 				<div class="cst"><img src="images/resource/es1.jpg" alt="" /></div>
+				 				<div class="cst"><img src="{{ asset('uploads/candidat/'.$candidat->photo)}}" alt="" /></div>
 				 				<h3>{{$candidat->nom}} {{$candidat->prenom}}</h3>
 				 				<p> {{$candidat->date_naissance}}</p>
 				 				<p> <span>LinkedIn</span>{{$candidat->lien_linkedin}}"</p>
 				 				<p><i class="la la-map-marker"></i>{{$candidat->adress}}</p>
 				 			</div>
 
-
+							 <div class="download-cv">
+				 				<a href="#" title="">Download <i class="la la-download"></i></a>
+				 			</div>
 
 
 							 
-				 			<div class="download-cv">
-				 				<a href="#" title="">Download CV <i class="la la-download"></i></a>
-				 			</div>
+				 			
 				 		</div>
 				 		<ul class="cand-extralink">
-				 			<li><a href="#about" title="">À propos</a></li>
+				 		
 				 			<li><a href="#education" title="">Formations</a></li>
 				 			<li><a href="#experience" title="">Experience</a></li>
 				 			<li><a href="#portfolio" title="">Diplome et Certification</a></li>
 				 			<li><a href="#skills" title="">Comptences</a></li>
 				 			<li><a href="#awards" title="">CV et Lettre de Motivation</a></li>
 				 		</ul>
+						
+						 @foreach($cvs as $cv)
+						 @if($cv->idCandidate == $candidat->id) 
+						<br>
+						
+
 				 		<div class="cand-details-sec">
+						 <div>
+						 <h2> {{$cv->titre}} </h2>
+						 </div>
 				 			<div class="row">
 				 				<div class="col-lg-8 column">
 				 					<div class="cand-details" id="about">
 				 						
 				 						<div class="edu-history-sec" id="education">
 				 							<h2>Formations</h2>
-				 							<div class="edu-history">
-				 								<i class="la la-graduation-cap"></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>University</h3>
-				 									<i>2008 - 2012</i>
-				 									<span>Middle East Technical University <i>Computer Science</i></span>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-				 								</div>
+
+											 @foreach($formations as $formation)
+												@if($formation->idCv == $cv->id)
+
+														
+		 							<div class="edu-history">
+		 								<i class="la la-graduation-cap"></i>
+		 								<div class="edu-hisinfo">
+		 									<h3>{{$formation->lieu}}</h3>
+		 									<i>{{$formation->date_de_debut}} - {{$formation->date_de_fin}}</i>
+		 									<span>{{$formation->diplome}} <i>{{$formation->domaine}}</i></span>
+		 									
+		 								</div>
 				 							</div>
-				 							<div class="edu-history">
-				 								<i class="la la-graduation-cap"></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>High School</h3>
-				 									<i>2008 - 2012</i>
-				 									<span>Tomms College <i>Bachlors in Fine Arts</i></span>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-				 								</div>
-				 							</div>
+											 @endif
+											 @endforeach
+				 							
 				 						</div>
 				 						<div class="edu-history-sec" id="experience">
 				 							<h2>Travail et Experience</h2>
-				 							<div class="edu-history style2">
-				 								<i></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>Web Designer <span>Inwave Studio</span></h3>
-				 									<i>2008 - 2012</i>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-				 								</div>
-				 							</div>
-				 							<div class="edu-history style2">
-				 								<i></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>CEO Founder <span>Inwave Studio</span></h3>
-				 									<i>2008 - 2012</i>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-				 								</div>
-				 							</div>
+											 
+							   @foreach($experiences as $experience)
+												@if($experience->idCv == $cv->id)
+				 							
+												<div class="edu-history style2">
+		 								<i></i>
+		 								<div class="edu-hisinfo">
+		 									<h3>{{$experience->intitule}} </h3>
+		 									<i>{{$experience->date_de_debut}} - {{$experience->date_de_fin}}</i>
+		 									<p>{{$experience->description}}</p>
+		 								</div>
+										 @endif
+											 @endforeach
 				 						</div>
-				 						<div class="mini-portfolio" id="portfolio">
+										 </div>
+				 						<!-- <div class="mini-portfolio" id="portfolio">
 				 							<h2>Diplome et Certification</h2>
 				 							<div class="mp-row">
 				 								<div class="mp-col">
@@ -131,77 +137,56 @@
 				 								</div>
 				 								
 				 							</div>
-				 						</div>
+				 						</div> -->
 				 						<div class="progress-sec" id="skills">
 				 							<h2>Compétences</h2>
+											 
+								 @foreach($competences as $competence)
+												@if($competence->idCv == $cv->id)
 				 							<div class="progress-sec">
-				 								<span>Adobe Photoshop</span>
-				 								<div class="progressbar"> <div class="progress" style="width: 80%;"><span>80%</span></div> </div>
+				 								<span>{{$competence->description}}p</span>
+				 								<div class="progressbar"> <div class="progress" style="width: 90%;"><span>90%</span></div> </div>
 				 							</div>
-				 							<div class="progress-sec">
-				 								<span>Production In Html</span>
-				 								<div class="progressbar"> <div class="progress" style="width: 60%;"><span>60%</span></div> </div>
+
+ @endif
+											 @endforeach
+				 							
+				 						
+				 							
+				 						
 				 							</div>
-				 							<div class="progress-sec">
-				 								<span>Graphic Design</span>
-				 								<div class="progressbar"> <div class="progress" style="width: 75%;"><span>75%</span></div> </div>
-				 							</div>
-				 						</div>
-				 						<div class="edu-history-sec" id="awards">
-				 							<h2>Awards</h2>
-				 							<div class="edu-history style2">
-				 								<i></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>Perfect Attendance Programs</h3>
-				 									<i>2008 - 2012</i>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+										<div class="mini-portfolio" id="portfolio">
+										@foreach($documents as $document)
+												@if($document->idCv == $cv->id)
+
+				 							<h2>Autre Documents</h2>
+				 							<div class="mp-row">
+				 								<div class="mp-col">
+				 									<div class="mportolio"><img src="{{ asset('uploads/candidat/'.$document->fichier)}}" alt="" /><a href="#" title=""><i class="la la-search"></i></a></div>
 				 								</div>
+				 								
+				 								
 				 							</div>
-				 							<div class="edu-history style2">
-				 								<i></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>Top Performer Recognition</h3>
-				 									<i>2008 - 2012</i>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-				 								</div>
-				 							</div>
-				 							<div class="edu-history style2">
-				 								<i></i>
-				 								<div class="edu-hisinfo">
-				 									<h3>King LLC</h3>
-				 									<i>2008 - 2012</i>
-				 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-				 								</div>
-				 							</div>
-				 						</div>
-				 						<div class="companyies-fol-sec">
-				 							<h2>Companies Followed By</h2>
-				 							<div class="cmp-follow">
-				 								<div class="row">
-				 									<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-				 										<a href="#" title=""><img src="images/resource/em1.jpg" alt="" /><span>King LLC</span></a>
-				 									</div>
-				 									<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-				 										<a href="#" title=""><img src="images/resource/em2.jpg" alt="" /><span>Telimed</span></a>
-				 									</div>
-				 									<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-				 										<a href="#" title=""><img src="images/resource/em3.jpg" alt="" /><span>Ucesas</span></a>
-				 									</div>
-				 									<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-				 										<a href="#" title=""><img src="images/resource/em4.jpg" alt="" /><span>TeraPlaner</span></a>
-				 									</div>
-				 									<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-				 										<a href="#" title=""><img src="images/resource/em5.jpg" alt="" /><span>Cubico</span></a>
-				 									</div>
-				 									<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-				 										<a href="#" title=""><img src="images/resource/em6.jpg" alt="" /><span>Airbnb</span></a>
-				 									</div>
-				 								</div>
-				 							</div>
+											 
+ @endif
+											 @endforeach
+				 							
+
+				 						</div> 
+
+
+
+
 				 						</div>
 				 					</div>
 				 				</div>
-				 				<div class="col-lg-4 column">
+				 				
+				 			</div>
+				 		</div>
+						 @endif
+@endforeach
+
+<div class="col-lg-4 column">
 						 			<!-- <div class="job-overview">
 							 			<h3>Aperçu de l'emploi</h3>
 							 			<ul>
@@ -225,12 +210,11 @@
 							 			</form>
 							 		</div>
 						 		</div>
-				 			</div>
-				 		</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
- </form> 
+  
 @endsection

@@ -14,8 +14,10 @@ use App\Formation;
 use App\Recruteur;
 use App\Experience;
 use App\Competence;
+use App\Document;
 use Session;
 use App\Http\Requests\CvRequest;
+use Illuminate\Http\UploadedFile;
 
 class CvController extends Controller
 {
@@ -65,6 +67,24 @@ class CvController extends Controller
       $competence->save();
     
       }
+
+      $document = new Document();
+      $document->type = $request->TypeDoc;
+      $document->nom = $request->NomDoc;
+      $document->idCv = Session::get('IDCV');
+
+          
+    if($request->hasfile('Doc')){
+      $file =$request->file('Doc');
+      $extension =$file->getClientOriginalExtension();
+      $filename=time() .'.'. $extension;
+      $file->move('uploads/candidat/', $filename);
+      $document->fichier = $filename;
+          }else {
+              return $request;
+              $document->fichier='';
+          }
+            $document->save();
       
         return redirect('resume');
        // return Session::get('IDCV');
@@ -77,8 +97,9 @@ class CvController extends Controller
        $formation=Formation::all();
        $experience=Experience::all();
        $competence=Competence::all();
+       $document=Document::all();
        
-       return view('pages.candidate.candidate_resume',['cvs'=>$cv,'formations'=>$formation,'experiences'=>$experience,'competences'=>$competence] );
+       return view('pages.candidate.candidate_resume',['cvs'=>$cv,'formations'=>$formation,'experiences'=>$experience,'competences'=>$competence,'documents'=>$document] );
    }
    
    public function editFormation($id)
@@ -163,6 +184,13 @@ public function destroyExp($id){
 
   $experience = Experience::find($id);
   $experience->delete();
+  return redirect('resume');
+} 
+
+public function destroyDoc($id){
+
+  $document = Document::find($id);
+  $document->delete();
   return redirect('resume');
 } 
 
