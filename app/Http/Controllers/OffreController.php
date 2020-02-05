@@ -174,17 +174,17 @@ public function getKeyWord(Request $request)
 $o = new Offre();
 if($request->ajax())
 {
- $output = '<ul class="list-unstyled">';
+ $output = '';
  $query = $request->get('query');
  if($query != '')
  {
   $job =$o
-    ->where('intitule', 'like', '%'.$query.'%')
-    ->orWhere('type_contract', 'like', '%'.$query.'%')
+    ->where('intitule', 'like', '%'.$query.'%')->distinct('intitule')
+    
     ->get();
     
     $contract = $o
-    ->Where('type_contract', 'like', '%'.$query.'%')
+    ->Where('type_contract', 'like', '%'.$query.'%')->distinct('type_contract')
     ->get();
 
     if($job->count() > 0)
@@ -192,26 +192,26 @@ if($request->ajax())
        foreach($job as $row)
        {
         $output .= '
-       <li>'.$row->intitule.'</li>
+       <a class="dropdown-item">'.$row->intitule.'<a>
         ';
        }
       }
-      else if($contract->count()>0)
+      if($contract->count()>0)
       {
         foreach($contract as $row)
         {
         $output .= '
-        <li>'.$row->type_contract.'</li>
+        <a class="dropdown-item">'.$row->type_contract.'</a>
          ';
       }
       }
-      else
+      if($job->count()==0 && $contract->count()==0)
       {
-        $output .= '
-        <li>no data found</li>
+        $output = '
+        <a class="dropdown-item">no data found</a>
          ';
       }
-$output .='</ul>' ;
+//$output .='</ul>' ;
 echo $output;  
 
 
@@ -220,6 +220,41 @@ echo $output;
 
 }
 
+
+}
+
+
+public function getLocation(Request $request)
+{
+  $o = new Offre();
+  if($request->ajax())
+  {
+   $output = '';
+   $query = $request->get('query');
+   if($query != '')
+   {
+    $lieu =$o
+      ->where('lieu_de_travail', 'like', '%'.$query.'%')->distinct()
+      ->get();
+      
+      if($lieu->count() > 0)
+      {
+       foreach($lieu as $row)
+       {
+        $output .= '
+       <a class="dropdown-item">'.$row->lieu_de_travail.'<a>
+        ';
+       }
+      }
+      else {
+        $output .= '
+        <a class="dropdown-item">no city found<a>
+         ';
+      }
+      echo $output;
+   }
+   
+  }
 
 }
 }
