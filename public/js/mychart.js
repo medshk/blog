@@ -330,13 +330,7 @@ function displayCryptoChart()
     event.stopPropagation();
       }  ); 
       //
-      document.getElementById("offreselectDiv2").style.top = "4.1%";
-      document.getElementById("offreselectDiv2").style.left = "8.4%";
-      document.getElementById("offreselectDiv2").style.width = "200px";
-     document.getElementById("offreselectDiv2").addEventListener('click',function ()
-     {
-      event.stopPropagation();
-        }  ); 
+     
     }
 
     // hide chart 4
@@ -358,38 +352,63 @@ function displayCryptoChart()
     async function getOffre() {
   
       var e = document.getElementById("offreSelect");
-      var e1 = document.getElementById("offreSelect2");
+   
       
-        let fromSymbol = e.options[e.selectedIndex].value;
-        let toSymbol = e1.options[e1.selectedIndex].value;
+        let query = e.options[e.selectedIndex].value;
+        
 
         $.ajax({  
-          url:"getKeyWord",  
+          url:"offreStat",  
           method:"GET",  
-          data:{query:query},  
+          data:{query:query},
+          dataType:'JSON',  
           success:function(data)  
-          {  
-               console.log(data);
+          {  console.log(data);
+           
+           
+            TESTER = document.getElementById('tester4');
+            Plotly.purge(TESTER);
+            // it workeeeeeeeeeeeed yey!
+              Plotly.plot( TESTER, [{
+                x: ['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'],
+              y: data,
+              mode:'line',
+                name:``,
+                line:{
+                color:'rgb(255, 7, 115)'
+              }
+                
+              }], {
+              title:`offre par moi` ,
+              yaxis:{title:``},
+              autosize: false,
+              width: 1100,
+              height: 500,
+              
+            
+            } 
+              
+              );
                
           }  
      }); 
      
-        
+        console.log(xAxe);
     TESTER = document.getElementById('tester4');
     Plotly.purge(TESTER);
     // it workeeeeeeeeeeeed yey!
       Plotly.plot( TESTER, [{
         x: xAxe,
-      y: yAxe,
+      y: ['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'],
       mode:'line',
-        name:`${toSymbol}`,
+        name:``,
         line:{
         color:'rgb(255, 7, 115)'
       }
         
       }], {
       title:`pffre par moi` ,
-      yaxis:{title:`${toSymbol}`},
+      yaxis:{title:``},
       autosize: false,
       width: 1100,
       height: 500,
