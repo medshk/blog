@@ -88,10 +88,10 @@
 
 										<div class="col-lg-6">
 											<span class="pf-title">Statut</span>
-                      <div class="pf-field">
+                      <div class="pf-field" style='display:none'>
                         <select data-placeholder="Please Select Specialism" name="statut" class="chosen">
-                          <option value="publiee">publiée</option>
-                          <option value="retiree">retirée</option>
+                          <option value="attente" selected>attente</option>
+                          <option value="attente">attente</option>
 
 
                         </select>
