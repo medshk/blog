@@ -96,12 +96,12 @@
                                 <div class="job-grid">
                                     <div class="job-title-sec">
                                         <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
-                                        <h3><a title="">Stock Market Value</a></h3>
+                                        <h3><a title="">nombre d'offre par moi</a></h3>
                                         <span>Graph</span>
                                         <span class="fav-job"><i class="la la-heart-o"></i></span>
                                     </div>
                                     
-                                    <a onclick="getdata();displayChart()" title="" class="signup-popup">SHOW CHART</a>
+                                    <a onclick="getOffre();displayOffreChart()" title="" class="signup-popup">SHOW CHART</a>
                                 </div><!-- JOB Grid -->
                             </div>
                             <!-- exchage rate chart-->
@@ -316,30 +316,31 @@
     
          
     <div class="dropdown-field col-lg-3"  id="offreselectDiv" >
-        <select id="offreSelect" onchange="" class="chosen">
-            {{$query=DB::table('recruteurs')->get()}}
-            @foreach ($query as $row)
+        <select id="offreSelect" onchange="getOffre()" class="chosen">
+            <?php
                 
+                   $date_parts1 = explode("-",auth::guard('recruteur')->user()->created_at );
+                   $date_parts2 = explode("-", date('Y-m-d'));
+                  $years=[];
+                   for($y=$date_parts1[0];$y<=$date_parts2[0];$y++)
+                   {
+                array_push($years,$y);
+                
+                   }
+                  
+                 
+            foreach ($years as $year)
+                
+           {
+                ?>
            
-        <option value="USD" selected="selected">{{$row->nom}}</option>
-       @endforeach
+        <option value='<?php echo $year ;?>' selected="selected"><?php echo $year ;?></option>
+           <?php }?>
      
     </select>
-    <span style="color:#fb236a;">entreprise<span>
+    <span style="color:#fb236a;">Année<span>
         </div>
-        <div class="dropdown-field col-lg-3"  id="offreselectDiv2" >
-           <select id="offreSelect2" onchange="getExchangedata()" class="chosen">
-         <option value="USD" >Dollar</option>
-         <option value="EUR">EURO</option>
-         <option value="DZD" selected="selected">DINAR</option>
-         <option value="GBP">Pound</option>
-         <option value="CHF">franc Suisse</option>
-        
-       </select>
-       <span style="color:#fb236a;">année<span>
-
        
-           </div>
             
          
  
