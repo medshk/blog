@@ -121,7 +121,7 @@ Route::get('recruteur/{id}/profile','RecruteurController@profile');
 Route::get('recruteur/{id}/offres','RecruteurController@offres');
 Route::get('recruteur/offre/reponse/{id}','RecruteurController@reponseoffres');
 Route::get('offre/{id}/reponse/cv/{id_cv}','RecruteurController@reponseoffrescv');
-
+Route::get('downloads/{file}','RecruteurController@file' );
 Route::post('createDoc/{id}','DocumentController@create');
 Route::delete('resumeDoc/{id}', 'CvController@destroyDoc');
 

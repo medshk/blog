@@ -124,7 +124,18 @@ foreach ($experience as $o) {
                                    
 
 <H1>Divers</H1>
-    <?php  echo '<h2>'.$divers.'</h2>'; ?>                                
+    <?php  echo '<h2>'.$divers.'</h2>'; ?>    
+
+
+
+
+    <H1>Documents</H1>
+
+   @foreach ($documents as $doc ) 
+
+   <a href="{{ url('/downloads/'.$doc->fichier)}}"  class="btn btn-outline-danger">télécharger {{$doc->nom}}</a>;
+@endforeach;
+
                                       </div>
                                  </div>
                              </div>
