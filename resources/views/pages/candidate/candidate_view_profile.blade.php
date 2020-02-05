@@ -39,9 +39,6 @@
 		</div>
 	</section>
 
-
-	<!-- <form action="{{url('single/'.$candidat->id)}}" method="POST"> -->
-
 	<section class="overlape">
 		<div class="block remove-top">
 			<div class="container">
@@ -53,16 +50,12 @@
 				 			</div>
 				 			<div class="can-detail-s">
 				 				<div class="cst"><img src="images/resource/es1.jpg" alt="" /></div>
-				 				<h3>{{$candidat->nom}} {{$candidat->prenom}}</h3>
-				 				<p> {{$candidat->date_naissance}}</p>
-				 				<p> <span>LinkedIn</span>{{$candidat->lien_linkedin}}"</p>
-				 				<p><i class="la la-map-marker"></i>{{$candidat->adress}}</p>
+				 				<h3>David CARLOS</h3>
+				 				<span><i>UX / UI Designer</i> at Atract Solutions</span>
+				 				<p><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e4f5e2e6f3eef1e2ebe6fee2f5f4b7bfbfc7e0eae6eeeba9e4e8ea">[email&#160;protected]</a></p>
+				 				<p>Member Since, 2017</p>
+				 				<p><i class="la la-map-marker"></i>Istanbul / Turkey</p>
 				 			</div>
-
-
-
-
-							 
 				 			<div class="download-cv">
 				 				<a href="#" title="">Download CV <i class="la la-download"></i></a>
 				 			</div>
@@ -79,7 +72,9 @@
 				 			<div class="row">
 				 				<div class="col-lg-8 column">
 				 					<div class="cand-details" id="about">
-				 						
+				 						<h2>À propos de Candidat</h2>
+				 						<p>Hello my name is Mark William Connor and I’m a Web Designer & Web Developer from Melbourne, Australia. In pharetra orci dignissim, blandit mi semper, ultricies diam. Suspendisse malesuada suscipit nunc non volutpat. Sed porta nulla id orci laoreet tempor non consequat enim. Sed vitae aliquam velit. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam. </p>
+				 						<p>Mauris nec erat ut libero vulputate pulvinar. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam. Mauris nec erat ut libero vulputate pulvinar.</p>
 				 						<div class="edu-history-sec" id="education">
 				 							<h2>Formations</h2>
 				 							<div class="edu-history">
@@ -202,7 +197,7 @@
 				 					</div>
 				 				</div>
 				 				<div class="col-lg-4 column">
-						 			<!-- <div class="job-overview">
+						 			<div class="job-overview">
 							 			<h3>Aperçu de l'emploi</h3>
 							 			<ul>
 							 				<li><i class="la la-money"></i><h3>salaire ofert</h3><span>15000 - 20000</span></li>
@@ -212,7 +207,7 @@
 							 				<li><i class="la la-shield"></i><h3>Experience</h3><span>2 ans</span></li>
 							 				<li><i class="la la-line-chart "></i><h3>Niveau d'étude</h3><span>Bac+5</span></li>
 							 			</ul>
-							 		</div> --><!-- Job Overview -->
+							 		</div><!-- Job Overview -->
 							 		<div class="quick-form-job">
 							 			<h3>Contact</h3>
 							 			<form>
@@ -232,5 +227,5 @@
 			</div>
 		</div>
 	</section>
- </form> 
+
 @endsection

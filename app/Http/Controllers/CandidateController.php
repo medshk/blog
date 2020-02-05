@@ -5,12 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Candidate;
 use Illuminate\Http\UploadedFile;
-use App\Experience;
-use App\Competence;
-use Session;
-use App\Http\Requests\CvRequest;
-use App\Formation;
-use App\Cv;
+
 
 class CandidateController extends Controller
 {
@@ -38,6 +33,12 @@ $candidat->photo=$filename;
     }
 
            
+    
+        
+
+    
+
+
     	$candidat->save();
     	return redirect('profil');
     }
@@ -51,13 +52,5 @@ $candidat->photo=$filename;
        return view('pages.candidate.candidate_liste',['candidats'=>$profil]);
    }
 
-    public function single(Request $request,$id){
-        $cv= Cv::all();
-        $formation=Formation::all();
-        $experience=Experience::all();
-        $competence=Competence::all();    
-    $candidat = Candidate::find($id);
-    return view('pages.candidate.candidate_view_profile', ['candidat'=>$candidat,'cvs'=>$cv,'formations'=>$formation,'experiences'=>$experience,'competences'=>$competence]);  //bedelt edit b single
-  }
- 
+
 }
