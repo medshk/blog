@@ -122,6 +122,8 @@ Route::get('recruteur/{id}/offres','RecruteurController@offres');
 Route::get('recruteur/offre/reponse/{id}','RecruteurController@reponseoffres');
 Route::get('offre/{id}/reponse/cv/{id_cv}','RecruteurController@reponseoffrescv');
 
+Route::post('createDoc/{id}','DocumentController@create');
+Route::delete('resumeDoc/{id}', 'CvController@destroyDoc');
 
 
 Route::put('profil/{id}', 'CandidateController@update');
@@ -135,7 +137,7 @@ function () {
     return view('pages.candidate.candidate_view_profile');
 });
 
-
+Route::get('stat', 'RecruteurHomeController@getOffre');
 Route::get('resume/{id}/editFormation', 'CvController@editFormation');
 Route::put('resume/{id}', 'CvController@updateFormation');
 Route::delete('resumes/{id}', 'CvController@destroyForm');
