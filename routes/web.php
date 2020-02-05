@@ -119,7 +119,11 @@ Route::resource('recruteur', 'RecruteurController',[
 ]);
 Route::get('recruteur/{id}/profile','RecruteurController@profile');
 Route::get('recruteur/{id}/offres','RecruteurController@offres');
+Route::get('recruteur/offre/reponse/{id}','RecruteurController@reponseoffres');
+Route::get('offre/{id}/reponse/cv/{id_cv}','RecruteurController@reponseoffrescv');
 
+Route::post('createDoc/{id}','DocumentController@create');
+Route::delete('resumeDoc/{id}', 'CvController@destroyDoc');
 
 
 Route::put('profil/{id}', 'CandidateController@update');

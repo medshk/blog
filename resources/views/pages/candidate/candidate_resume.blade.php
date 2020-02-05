@@ -12,14 +12,18 @@
 
 
 									@foreach($cvs as $cv)
-
+								
+									
 									<div class="accordion md-accordion" id="acc" role="tablist" aria-multiselectable="true">
 
 <!-- Accordion card -->
 <div class="card">
 
-  <!-- Card header -->
-  <div class="card-header" role="tab" id="headingOne1">
+  
+									@if($cv->idCandidate == auth::guard('candidate')->user()->id) 
+
+<!-- Card header -->
+<div class="card-header" role="tab" id="headingOne1">
 	<a data-toggle="collapse" data-parent="#acc" href="#{{$cv->id}}" aria-expanded="true"
 	  aria-controls="{{$cv->id}}">
 	  <h5 class="mb-0">
@@ -28,7 +32,7 @@
 	</a>
   </div>
 
-									@if($cv->idCandidate == auth::guard('candidate')->user()->id) 
+
 									<div class="edu-history-sec">		
 		 							<div class="edu-history">						
 	  
@@ -55,18 +59,14 @@
 
 
 
-
-
 	 <div class="border-title"><h3> Formations</h3><a   onclick="myFunction()"  title=""><i class="la la-plus"></i> Ajouter formation</a></div>
 
-					 </div>
+					 <!-- </div> -->
 
 					 <form action="{{url('createForm/'.$cv->id)}}"  method="POST">
           {{csrf_field()}}
 
 <div id="div"  style="display:none">
-
-
 
 
 <div class="resumeadd-form">
@@ -115,13 +115,6 @@
 	</form>
 
 </div>
-					
-
-
-
-							
-
-								
 
 	<!-- <button onclick="myFunction()">Click Me</button> href="{{url('createForm/'.$cv->id.'/Aff')}}"    -->
 					 
@@ -295,35 +288,114 @@
 				
 				</form></li>
 				 						</ul>
+										
 		 							</div>
-		 							
-
-
-							
-  
-
+		 																 
 		 						</div>
 						
 								 @endif	
 											@endforeach
-									@endif
+											
+											<div class="border-title"><h3>Autre Documents</h3><a onclick="myFunction4()" title=""><i class="la la-plus"></i> Ajouter Document</a></div>
+											
+											<div id="divDoc" style="display:none">
+											<form action="{{url('createDoc/'.$cv->id)}}"  method="POST" enctype="multipart/form-data">
+          {{csrf_field()}}
+
+					<div class="col-lg-12">
+
+<div class="col-lg-12">
+							<span class="pf-title">Type</span>
+							<div class="pf-field">
+								<select data-placeholder="Please Select Specialism" name="TypeDoc" class="chosen" value="">
+									 <option value="CV">CV</option>
+									 <option value="diplome">diplome</option>
+									 <option value="lettre">Lettre de motivation</option>
+									 <option value="certif">certificat</option>
+									 <option value="autre">autre</option>
+								 </select>
+							</div>
+						</div>
+
+					 <div class="upload-portfolio">
+							 
+
+						 <div class="uploadfield">
+							 <span class="pf-title">Nom</span>
+							 <div class="pf-field">
+								 <input placeholder="Tooms.." type="text" name="NomDoc">
+							 </div>
+						 </div>
+																		 <div class="upload-img-bar">
+	
+
+								<input type="file" name="Doc" class="form-control">
+
+								</div>
+						 
+					 </div>
+				 </div>
+
+				 <div class="col-lg-12">
+								<button type="submit" class="btn btn-outline-danger">Ajouter</button>
+            </div>
+						 </form>
+						 </div>
+
+						 @foreach($documents as $document)
+												@if($document->idCv == $cv->id)
+
+												<div class="edu-hisinfo">
+		 									<h3>{{$document->nom}}</h3>
+		 								
+		 									<span> <i>{{$document->type}}</i></span>
+		 									
+		 								</div>
+												<div class="mini-portfolio">
+		 							<div class="mp-row">
+									
+		 								<div class="mp-col">
+		 									<div class="mportolio"><img src="{{ asset('uploads/candidat/'.$document->fichier)}}" alt="" /></div>
+		 									<ul class="action_job">
+				 							
+											 <li><form action ="{{url('resumeDoc/'.$document->id)}}" method="post">
+				{{csrf_field()}}
+				{{method_field('DELETE')}}
+				
+				<span>Supprimer</span><button type="submit" class="btn btn-outline-danger waves-effect px-1"><i class="la la-trash-o"
+        aria-hidden="true"></i></button></a>
+				
+				</form></li>
+				 						</ul>
+		 								</div>
+		 								
+									 </div>
+									 <!--  class mini portfolio -->
+									 </div>
 
 
+									 @endif	
+											@endforeach
+
+
+
+
+
+
+
+
+											@endif
+								
 									</div>
+									
     </div>
 
   </div>
+	
+	
   </div>
-
-
+	
 								 @endforeach
-
-
-
-
-
-
-
 								 
 @endsection
 
@@ -373,6 +445,23 @@ function myFunction3() {
 //var y = document.getElementById("id").value;
 
 var x = document.getElementById("divcom");
+
+
+
+if (x.style.display === "none") {
+	x.style.display = "block";
+} else {
+	x.style.display = "none";
+}
+
+}
+
+
+function myFunction4() {
+
+//var y = document.getElementById("id").value;
+
+var x = document.getElementById("divDoc");
 
 
 

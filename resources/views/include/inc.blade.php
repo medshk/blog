@@ -52,7 +52,14 @@
         <!-- if recruteur-->
         @elseif(auth::guard('recruteur')->check())
         <div class="btns-profiles-sec">
+        @if(isset(auth::guard('recruteur')->user()->logo))
+            <span><img src="{{auth::guard('recruteur')->user()->logo}}" alt="" style="max-width:40px" /> Menu <i class="la la-angle-down"></i></span>
+         
+
+        @elseif(!isset(auth::guard('recruteur')->user()->logo))
             <span><img src="images/resource/profile.jpg" alt="" /> Menu <i class="la la-angle-down"></i></span>
+         @endif
+                                         
             <ul>
                 <li><a href="{{url('recruteur/'.auth::guard('recruteur')->user()->id.'/profile')}}" title=""><i class="la la-file-text"></i>Profile</a></li>
                 <li><a href="{{url('offre/create')}}" title=""><i class="la la-briefcase"></i>Poster Offre</a></li>

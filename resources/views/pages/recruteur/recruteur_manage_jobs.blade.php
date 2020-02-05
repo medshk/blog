@@ -40,7 +40,7 @@
             </td>
             <td>
                 <ul class="action_job">
-                    <li><span>View Job</span><a href="#" title=""><i class="la la-eye"></i></a></li>
+                    <li><span>reponses</span><a href="{{url('recruteur/offre/reponse/'.$o->id)}}" title=""><i class="la la-eye"></i></a></li>
                     <li><span>Edit</span><a href="{{url('offre/'.$o->id.'/edit')}}" title=""><i class="la la-pencil"></i></a></li>
                     <li><span>Delete</span>
                       <form class="form-inline" action="{{ url('offre/'.$o->id)}}"  method="POST">

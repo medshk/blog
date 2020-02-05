@@ -11,6 +11,7 @@ use Session;
 use App\Http\Requests\CvRequest;
 use App\Formation;
 use App\Cv;
+use App\Document;
 
 class CandidateController extends Controller
 {
@@ -33,7 +34,7 @@ $filename=time() .'.'.$extension;
 $file->move('uploads/candidat/',$filename);
 $candidat->photo=$filename;
     }else {
-        return request;
+        return $request;
         $candidat->photo='';
     }
 
@@ -55,9 +56,10 @@ $candidat->photo=$filename;
         $cv= Cv::all();
         $formation=Formation::all();
         $experience=Experience::all();
-        $competence=Competence::all();    
+        $competence=Competence::all(); 
+        $document=Document::all();   
     $candidat = Candidate::find($id);
-    return view('pages.candidate.candidate_view_profile', ['candidat'=>$candidat,'cvs'=>$cv,'formations'=>$formation,'experiences'=>$experience,'competences'=>$competence]);  //bedelt edit b single
+    return view('pages.candidate.candidate_view_profile', ['candidat'=>$candidat,'cvs'=>$cv,'formations'=>$formation,'experiences'=>$experience,'competences'=>$competence,'documents'=>$document]);  //bedelt edit b single
   }
  
 }

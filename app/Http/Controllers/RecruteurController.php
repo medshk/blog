@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\recruteur;
 use App\Offre;
 use App\Candidature;
+use App\Cv;
+use App\Candidate;
+use App\Experience;
+use App\Formation ;
+
 use Hash;
 use Auth;
 
@@ -44,6 +49,36 @@ class RecruteurController extends Controller
        return view('pages.recruteur.recruteur_manage_jobs' , ['user'=>$user,'offres'=>$offres,'totalApplied'=>$totalApplied,'offresActive'=>$offresActive]);
     }
 
+    public function reponseoffres(Request $request)
+    {
+      $user=Auth::guard('recruteur')->user();
+      $Candidatures=Candidature::where('idOffre','=',$request->id)
+      ->join('candidates', 'idCandidate', '=', 'candidates.id')
+      ->join('offres', 'offres.id', '=', 'candidatures.idOffre')
+      ->get();
+
+      return view('pages.recruteur.recruteur_reponse_jobs' , ['recruteur'=>$user,'user'=>$user,'Candidatures'=>$Candidatures]);    
+
+    }
+
+    public function reponseoffrescv(Request $request)
+    {
+      $user=Auth::guard('recruteur')->user();
+      $id_offre = $request->id ;
+      $id_cv = $request->id_cv;
+      
+      $cv=Cv::where('id','=',$id_cv)->get();
+      foreach ($cv as $o) {
+        $candidat=Candidate::where('id','=', $o->idCandidate )->get();
+    }
+      $cvs=Cv::where('id','=',$id_cv)->get();
+      $experience=Experience::where('idCv','=',$id_cv)->get();
+      $formation=Formation::where('idCv','=',$id_cv)->get();
+      $offre = Offre::where('id','=',$id_offre)->get();
+      
+      return view('pages.recruteur.recruteur_reponse_cv' , ['candidat'=>$candidat , 'recruteur'=>$user,'user'=>$user,'offre'=>$offre , 'cv'=>$cv,'experience'=>$experience,'formation'=>$formation]);    
+
+    }
 
 
 
