@@ -10,7 +10,8 @@ use App\Cv;
 use App\Candidate;
 use App\Experience;
 use App\Formation ;
-
+use App\Document;
+use Storage;
 use Hash;
 use Auth;
 
@@ -66,6 +67,8 @@ class RecruteurController extends Controller
       $user=Auth::guard('recruteur')->user();
       $id_offre = $request->id ;
       $id_cv = $request->id_cv;
+      $documents= Document::where('idCv','=', $id_cv )->get(); 
+      
       
       $cv=Cv::where('id','=',$id_cv)->get();
       foreach ($cv as $o) {
@@ -76,7 +79,7 @@ class RecruteurController extends Controller
       $formation=Formation::where('idCv','=',$id_cv)->get();
       $offre = Offre::where('id','=',$id_offre)->get();
       
-      return view('pages.recruteur.recruteur_reponse_cv' , ['candidat'=>$candidat , 'recruteur'=>$user,'user'=>$user,'offre'=>$offre , 'cv'=>$cv,'experience'=>$experience,'formation'=>$formation]);    
+      return view('pages.recruteur.recruteur_reponse_cv' , ['documents'=>$documents , 'candidat'=>$candidat , 'recruteur'=>$user,'user'=>$user,'offre'=>$offre , 'cv'=>$cv,'experience'=>$experience,'formation'=>$formation]);    
 
     }
 
@@ -94,7 +97,11 @@ class RecruteurController extends Controller
     }
 
 
-
+    public function file(request $request)
+    {
+      $filepath=  $request->file;
+      return Storage::download('images/uploads/candidat/'.$filepath);
+    }
 
     public function update(Request $request)
     {

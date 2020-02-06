@@ -80,6 +80,78 @@
     </div>
 </section>
 
+<!-- web site statistiques-->
+<section>
+    <div class="block  gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading">
+                        <h2>Statistiques sur les offres</h2>
+                        <span></span>
+                    </div><!-- Heading -->
+                    <div class="job-grid-sec">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">nombre d'offre par moi</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getOffre();displayOffreChart()" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            <!-- exchage rate chart-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">nombre de contract par moi</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getType();displayTypeChart()" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            <!-- cryptocurrencies exchange rate-->
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">Cryptocurrencies Exchange Rate</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getCryptodata();displayCryptoChart();" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="job-grid">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
+                                        <h3><a title="">Cryptocurrencies Exchange Rate</a></h3>
+                                        <span>Graph</span>
+                                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                    </div>
+                                    
+                                    <a onclick="getCryptodata();displayCryptoChart();" title="" class="signup-popup">SHOW CHART</a>
+                                </div><!-- JOB Grid -->
+                            </div>
+                            
+                           
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- top highest rate candidate section-->
 <section>
 <div class="block gray">
@@ -235,6 +307,82 @@
          
  
  </div>
+
+ <!-- offers number by month-->
+
+ <div class="account-popup-area signin-popup-box" id="myChart4"  >
+    <div id="tester4" class="heading" ></div>
+     
+    
+         
+    <div class="dropdown-field col-lg-3"  id="offreselectDiv" >
+        <select id="offreSelect" onchange="getOffre()" class="chosen">
+            <?php
+                
+                   $date_parts1 = explode("-",auth::guard('recruteur')->user()->created_at );
+                   $date_parts2 = explode("-", date('Y-m-d'));
+                  $years=[];
+                   for($y=$date_parts1[0];$y<=$date_parts2[0];$y++)
+                   {
+                array_push($years,$y);
+                
+                   }
+                  
+                 
+            foreach ($years as $year)
+                
+           {
+                ?>
+           
+        <option value='<?php echo $year ;?>' selected="selected"><?php echo $year ;?></option>
+           <?php }?>
+     
+    </select>
+    <span style="color:#fb236a;">Année<span>
+        </div>
+       
+            
+         
+ 
+ </div>
+
+<!--chart 5-->
+<div class="account-popup-area signin-popup-box" id="myChart5"  >
+    <div id="tester5" class="heading" ></div>
+     
+    
+         
+    <div class="dropdown-field col-lg-3"  id="typeselectDiv" >
+        <select id="typeSelect" onchange="getType()" class="chosen">
+            <?php
+                
+                   $date_parts1 = explode("-",auth::guard('recruteur')->user()->created_at );
+                   $date_parts2 = explode("-", date('Y-m-d'));
+                  $years=[];
+                   for($y=$date_parts1[0];$y<=$date_parts2[0];$y++)
+                   {
+                array_push($years,$y);
+                
+                   }
+                  
+                 
+            foreach ($years as $year)
+                
+           {
+                ?>
+           
+        <option value='<?php echo $year ;?>' selected="selected"><?php echo $year ;?></option>
+           <?php }?>
+     
+    </select>
+    <span style="color:#fb236a;">Année<span>
+        </div>
+       
+            
+         
+ 
+ </div>
+
 
 <script src="{{asset('js/mychart.js?1500')}}"></script>
 @endsection

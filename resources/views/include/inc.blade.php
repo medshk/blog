@@ -86,7 +86,7 @@
 <nav>
     <ul>
         <li >
-            <a href="#" title="">Home</a>
+            <a href="{{url('recruteur')}}" title="">Home</a>
 
         </li>
         @if (!auth::guard('recruteur')->check())
@@ -97,7 +97,7 @@
         @endif
         @if (!auth::guard('candidate')->check())
         <li class="menu-item-has-children">
-            <a href="#" title="">Candidates</a>
+            <a href="" title="">Candidates</a>
            
         </li>
         @endif

@@ -130,7 +130,7 @@ Route::get('recruteur/{id}/profile','RecruteurController@profile');
 Route::get('recruteur/{id}/offres','RecruteurController@offres');
 Route::get('recruteur/offre/reponse/{id}','RecruteurController@reponseoffres');
 Route::get('offre/{id}/reponse/cv/{id_cv}','RecruteurController@reponseoffrescv');
-
+Route::get('downloads/{file}','RecruteurController@file' );
 Route::post('createDoc/{id}','DocumentController@create');
 Route::delete('resumeDoc/{id}', 'CvController@destroyDoc');
 
@@ -145,8 +145,8 @@ function () {
     
     return view('pages.candidate.candidate_view_profile');
 });
-
-
+Route::get('typeStat', 'RecruteurHomeController@getType')->name('typeStat');
+Route::get('offreStat', 'RecruteurHomeController@getOffre')->name('offreStat');
 Route::get('resume/{id}/editFormation', 'CvController@editFormation');
 Route::put('resume/{id}', 'CvController@updateFormation');
 Route::delete('resumes/{id}', 'CvController@destroyForm');
