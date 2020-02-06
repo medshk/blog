@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-header">
-                        <h3>Welcome Ali TUFAN</h3>
+                        <h3></h3>
                     </div>
                 </div>
             </div>
@@ -32,18 +32,19 @@
              <div class="row no-gape">
                  <aside class="col-lg-3 column border-right">
                      <div class="widget">
-                         <div class="tree_widget-sec">
-                             <ul>
-                                 <li><a href="{{url('profil')}}" title=""><i class="la la-file-text"></i>My Profile</a></li>
-                                <li><a href="{{url('resume')}}" title=""><i class="la la-briefcase"></i>Mon Resumé</a></li>
-                                <li><a href="candidates_shortlist.html" title=""><i class="la la-money"></i>Shorlisted Job</a></li>
-                                <li><a href="candidates_applied_jobs.html" title=""><i class="la la-paper-plane"></i>Applied Job</a></li>
-                                <li><a href="candidates_job_alert.html" title=""><i class="la la-user"></i>Job Alerts</a></li>
-                                <li><a href="{{url('resumevide')}}" title=""><i class="la la-file-text"></i>Ajouter CV</a></li>
-                                <li><a href="candidates_change_password.html" title=""><i class="la la-flash"></i>Change Password</a></li>
-                                <li><a href="#" title=""><i class="la la-unlink"></i>Logout</a></li>
-                             </ul>
-                         </div>
+                     <div class="tree_widget-sec">
+		<ul>
+			<li><a href="{{url('profil')}}" title=""><i class="la la-file-text"></i>Mon Profil</a></li>
+            <li><a href="{{url('resume')}}" title=""><i class="la la-briefcase"></i>Mon Resumé</a></li>
+            <!-- <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li> -->
+			<li><a href="{{url('candidate/offres')}}" title=""><i class="la la-money"></i>Liste des Offres</a></li>
+			<li><a href="{{url('/listpost/'. auth::guard('candidate')->user()->id  )}}" title=""><i class="la la-paper-plane"></i>Mes Offres</a></li>
+			
+			<li><a href="{{url('resumevide')}}" title=""><i class="la la-file-text"></i>Crée Mon CV</a></li>
+			<!-- <li><a href="candidates_change_password.html" title=""><i class="la la-flash"></i>Change Password</a></li> -->
+       
+		</ul>
+	</div>
                      </div>
                      <div class="widget">
                          <div class="skill-perc">

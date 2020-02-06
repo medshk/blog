@@ -1,64 +1,64 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-<div class="manage-jobs-sec">
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>Editer Formation</h3>
+
+<div>
 
 <form action="{{url('resume/'.$formation->id)}}" method="POST">
 <input type="hidden" name="_method" value="PUT">
           {{csrf_field()}}
 
+    <label for="fname">Diplome</label>
+    <input type="text" name="diplome" value="{{$formation->diplome}}" placeholder="Your name..">
 
-
-    <div class="border-title"><h3>Formation</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
-    <div class="resumeadd-form">
-        <div class="row">
-            <div class="col-lg-6">
-                <span class="pf-title">Diplome</span>
-                <div class="pf-field">
-                    <input placeholder="Tooms.." type="text" name="diplome" value="{{$formation->diplome}}">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <span class="pf-title">Domaine</span>
-                <div class="pf-field">
-                    <input placeholder="Tooms.." type="text" name="domaine" value="{{$formation->domaine}}">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-					<span class="pf-title">Date de Début</span>
-						<div class="pf-field">
-													
-						   <input type="date" name="date_de_debut" value="{{$formation->date_de_debut}}">
-												</div>
-											</div>
-            
-                                            <div class="col-lg-6">
-					<span class="pf-title">Date de fin</span>
-						<div class="pf-field">
-													
-						   <input type="date" name="date_de_fin" value="{{$formation->date_de_fin}}">
-												</div>
-											</div>
-
-            <div class="col-lg-12">
-                <span class="pf-title">Lieu</span>
-                <div class="pf-field">
-                    <input type="text" name="lieu" value="{{$formation->lieu}}">
-                </div>
-            </div>
-            
-            <input type="submit" name="" value="Modifier">
-         
-        </div>
-     
-    </div>
-
-
-    
-    
-
-    </form>
-
+    <label for="lname">Domaine</label>
+    <input placeholder="Tooms.." type="text" name="domaine" value="{{$formation->domaine}}">
+    <label for="lname">Date de debut</label>
+    <input type="date" name="date_de_debut" value="{{$formation->date_de_debut}}">
+    <label for="lname">Date de Fin</label>
+    <input type="date" name="date_de_fin" value="{{$formation->date_de_fin}}">
+    <label for="lname">Lieu</label>
+    <input type="text" name="lieu" value="{{$formation->lieu}}">
+  
+    <input type="submit" value="Modifier">
+  </form>
 </div>
-<!--mother div has class block remove-top -->
+
+</body>
+</html>
+
+

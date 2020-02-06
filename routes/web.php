@@ -76,7 +76,6 @@ function () {
 
 Route::get('/offre',
 function () {
-
     return view('pages.offre.offre_view');
 });
 Route::get('/success',
@@ -95,6 +94,9 @@ function () {
     
     return view('pages/recruteur/recruteur_home');
 });
+
+
+
     
 
 Auth::routes();
@@ -117,6 +119,13 @@ Route::get('offre/getLocation','OffreController@getLocation')->name('getLocation
 Route::resource('recruteur', 'RecruteurController',[
     'only' => [ 'edit','update','destroy']
 ]);
+
+Route::get('candidate/offres','CandidateController@offres');
+Route::get('offre/{id_candi}/{id_offre}','CandidateController@choixCv');
+Route::get('offre/insertcandidature/{id_candi}/{id_offre}/{id_cv}','CandidateController@insertcandidature');
+
+
+
 Route::get('recruteur/{id}/profile','RecruteurController@profile');
 Route::get('recruteur/{id}/offres','RecruteurController@offres');
 Route::get('recruteur/offre/reponse/{id}','RecruteurController@reponseoffres');
@@ -168,3 +177,6 @@ Route::delete('deleteCv/{id}', 'CvController@destroyCv');
 
 Route::get('list','CandidateController@listprofil');
 Route::get('single/{id}/show','CandidateController@single');
+
+
+Route::get('listpost/{id}','CandidateController@listpost');

@@ -108,7 +108,7 @@ class CvController extends Controller
     return view('pages.candidate.editFormation', ['formation'=>$formation]);
 
    }
-   public function updateFormation(CvRequest $request, $id){
+   public function updateFormation(Request $request, $id){
 
     
     $formation = Formation::find($id);
@@ -117,8 +117,6 @@ class CvController extends Controller
     $formation->lieu =  $request->input('lieu'); 
     $formation->date_de_debut =  $request->input('date_de_debut');
     $formation->date_de_fin =  $request->input('date_de_fin');  
-
-
 
     $formation->save();
     return redirect('resume');    	
@@ -138,7 +136,7 @@ class CvController extends Controller
    return view('pages.candidate.editCompetence', ['competence'=>$competence]);
 
   }
-  public function updateCompetence(CVRequest $request, $id){
+  public function updateCompetence(Request $request, $id){
 
    
    $competence = Competence::find($id);

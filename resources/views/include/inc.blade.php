@@ -26,7 +26,7 @@
 
 
         <div class="my-profiles-sec">
-            <span><img src="images/resource/mp1.jpg" alt="" /><i class="la la-bars"> {{auth::guard('candidate')->user()->nom}}
+            <span><img src="{{ asset('uploads/candidat/'.auth::guard('candidate')->user()->photo)}}" style='max-width:70px;width:70px;' alt="" /><i class="la la-bars"> {{auth::guard('candidate')->user()->nom}}
                  {{auth::guard('candidate')->user()->prenom}}</i></span>
         </div>
 
@@ -140,9 +140,9 @@
 <div class="profile-sidebar">
 	<span class="close-profile"><i class="la la-close"></i></span>
 	<div class="can-detail-s">
-		<div class="cst"><img src="images/resource/es1.jpg" alt="" /></div>
+		<div class="cst"><img src="{{ asset('uploads/candidat/'.auth::guard('candidate')->user()->photo)}}" alt="" /></div>
 		<h3>{{auth::guard('candidate')->user()->nom}} {{auth::guard('candidate')->user()->prenom}}</h3>
-		<span><i>UX / UI Designer</i> at Atract Solutions</span>
+	
 		<p>Member Since, 2017</p>
 		<p><i class="la la-map-marker"></i>{{auth::guard('candidate')->user()->adress}}</p>
 	</div>
@@ -150,12 +150,12 @@
 		<ul>
 			<li><a href="{{url('profil')}}" title=""><i class="la la-file-text"></i>Mon Profil</a></li>
             <li><a href="{{url('resume')}}" title=""><i class="la la-briefcase"></i>Mon Resumé</a></li>
-            <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li>
-			<li><a href="candidates_shortlist.html" title=""><i class="la la-money"></i>Shorlisted Job</a></li>
-			<li><a href="candidates_applied_jobs.html" title=""><i class="la la-paper-plane"></i>Applied Job</a></li>
-			<li><a href="candidates_job_alert.html" title=""><i class="la la-user"></i>Job Alerts</a></li>
+            <!-- <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li> -->
+			<li><a href="{{url('candidate/offres')}}" title=""><i class="la la-money"></i>Liste des Offres</a></li>
+			<li><a href="{{url('/listpost/'. auth::guard('candidate')->user()->id  )}}" title=""><i class="la la-paper-plane"></i>Mes Offres</a></li>
+			
 			<li><a href="{{url('resumevide')}}" title=""><i class="la la-file-text"></i>Crée Mon CV</a></li>
-			<li><a href="candidates_change_password.html" title=""><i class="la la-flash"></i>Change Password</a></li>
+			<!-- <li><a href="candidates_change_password.html" title=""><i class="la la-flash"></i>Change Password</a></li> -->
        
 		</ul>
 	</div>

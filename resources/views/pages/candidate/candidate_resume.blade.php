@@ -355,7 +355,7 @@
 		 							<div class="mp-row">
 									
 		 								<div class="mp-col">
-		 									<div class="mportolio"><img src="{{ asset('uploads/candidat/'.$document->fichier)}}" alt="" /></div>
+		 									<div class="mportolio"><img src="{{asset('uploads/candidat/'.$document->fichier)}}" alt="" /></div>
 		 									<ul class="action_job">
 				 							
 											 <li><form action ="{{url('resumeDoc/'.$document->id)}}" method="post">
