@@ -172,56 +172,69 @@ return view('pages.offre.offre_liste');
 public function getKeyWord(Request $request)
 {
 $o = new Offre();
+
 if($request->ajax())
 {
  $output = '';
  $query = $request->get('query');
  if($query != '')
  {
-  $job =$o
-    ->where('intitule', 'like', '%'.$query.'%')->distinct('intitule')
-    
+  $data =$o
+    ->where('intitule', 'like', '%'.$query.'%')
+    ->orWhere('domaine', 'like', '%'.$query.'%')
+    ->orWhere('lieu_de_travail', 'like', '%'.$query.'%')
+    ->orWhere('type_contract', 'like', '%'.$query.'%')
+    ->orderBy('created_at', 'desc')
     ->get();
     
-    $contract = $o
-    ->Where('type_contract', 'like', '%'.$query.'%')->distinct('type_contract')
-    ->get();
-
-    if($job->count() > 0)
-      {
-       foreach($job as $row)
-       {
-        $output .= '
-       <a class="dropdown-item">'.$row->intitule.'<a>
-        ';
-       }
-      }
-      if($contract->count()>0)
-      {
-        foreach($contract as $row)
-        {
-        $output .= '
-        <a class="dropdown-item">'.$row->type_contract.'</a>
-         ';
-      }
-      }
-      if($job->count()==0 && $contract->count()==0)
-      {
-        $output = '
-        <a class="dropdown-item">no data found</a>
-         ';
-      }
-//$output .='</ul>' ;
-echo $output;  
-
-
  }
+ else
+ {
+  $data =$o
+    ->orderBy('created_at', 'desc')
+    ->get();
+ }
+ $total_row = $data->count();
+ if($total_row > 0)
+ {
+  foreach($data as $row)
+  {
+   $output .= '
+   <div class="job-listing wtabs">
+   <div class="job-title-sec">
+       <div class="c-logo"> <img src="" alt="" /> </div>
+       <h3><a href="#" title="">'.$row->intitule.'</a></h3>
+       <span>'.$row->domaine.'</span>
+       <div class="job-lctn"><i class="la la-map-marker"></i>'.$row->lieu_de_travail.'</div>
+   </div>
+   <div class="job-style-bx">
+       <span class="job-is pt ">'.$row->type_contract.'</span>
+       <span class="fav-job"><i class="la la-heart-o"></i></span>
+       <i>5 months ago</i>
+   </div>
+</div>
+   ';
+  }
+ }
+ else
+ {
+  $output = '
+  <tr>
+   <td align="center" colspan="5">No Data Found</td>
+  </tr>
+  ';
+ }
+ $data = array(
+  'table_data'  => $output,
+  'total_data'  => $total_row
+ );
 
-
+ echo json_encode($data);
+}
 }
 
 
-}
+
 
 
 public function getLocation(Request $request)
