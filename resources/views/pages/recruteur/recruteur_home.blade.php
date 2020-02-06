@@ -353,7 +353,7 @@
     
          
     <div class="dropdown-field col-lg-3"  id="typeselectDiv" >
-        <select id="typeSelect" onchange="getOffre()" class="chosen">
+        <select id="typeSelect" onchange="getType()" class="chosen">
             <?php
                 
                    $date_parts1 = explode("-",auth::guard('recruteur')->user()->created_at );

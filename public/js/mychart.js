@@ -443,7 +443,7 @@ function displayCryptoChart()
     async function getType() {
   
       var e = document.getElementById("typeSelect");
-   
+      
       
         let query = e.options[e.selectedIndex].value;
         
@@ -454,7 +454,7 @@ function displayCryptoChart()
           data:{query:query},
           dataType:'JSON',  
           success:function(data)  
-          {  console.log(data[0]['freelance']);
+          {  
            let y1=[];
            let y2 = [];
            let y3=[];
@@ -474,27 +474,34 @@ function displayCryptoChart()
            var trace1 = {
             x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
             y: y1,
-            type: 'bar'
+            type: 'bar',
+            name: 'cdd'
           };
           var trace2 = {
             x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
             y: y2,
-            type: 'bar'
+            type: 'bar',
+            name: 'cdi'
           };
           var trace3 = {
             x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
             y: y3,
-            type: 'bar'
+            type: 'bar',
+            name: 'stage',
           };
           var trace4 = {
             x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
             y: y4,
-            type: 'bar'
+            type: 'bar',
+            name: 'freelance'
           };
 
           var d = [trace1, trace2,trace3,trace4];
           var layout = {barmode: 'group'};
+          TESTER = document.getElementById('tester5');
+          Plotly.purge('tester5');
           Plotly.newPlot('tester5', d, layout);
+          
            /* TESTER = document.getElementById('tester5');
             Plotly.purge(TESTER);
             // it workeeeeeeeeeeeed yey!
