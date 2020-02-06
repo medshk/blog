@@ -109,12 +109,12 @@
                                 <div class="job-grid">
                                     <div class="job-title-sec">
                                         <div class="c-logo"> <img src="images/resource/jg6.png" alt="" /> </div>
-                                        <h3><a title="">Forex Exchange Rate</a></h3>
+                                        <h3><a title="">nombre de contract par moi</a></h3>
                                         <span>Graph</span>
                                         <span class="fav-job"><i class="la la-heart-o"></i></span>
                                     </div>
                                     
-                                    <a onclick="getExchangedata();displayExchangeChart()" title="" class="signup-popup">SHOW CHART</a>
+                                    <a onclick="getType();displayTypeChart()" title="" class="signup-popup">SHOW CHART</a>
                                 </div><!-- JOB Grid -->
                             </div>
                             <!-- cryptocurrencies exchange rate-->
@@ -348,7 +348,7 @@
 
 <!--chart 5-->
 <div class="account-popup-area signin-popup-box" id="myChart5"  >
-    <div id="tester4" class="heading" ></div>
+    <div id="tester5" class="heading" ></div>
      
     
          

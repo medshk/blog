@@ -393,29 +393,137 @@ function displayCryptoChart()
           }  
      }); 
      
-        console.log(xAxe);
-    TESTER = document.getElementById('tester4');
-    Plotly.purge(TESTER);
-    // it workeeeeeeeeeeeed yey!
-      Plotly.plot( TESTER, [{
-        x: xAxe,
-      y: ['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'],
-      mode:'line',
-        name:``,
-        line:{
-        color:'rgb(255, 7, 115)'
-      }
         
-      }], {
-      title:`pffre par moi` ,
-      yaxis:{title:``},
-      autosize: false,
-      width: 1100,
-      height: 500,
-      
     
-    } 
+    }
+
+
+    // nombre d'offre par type 
+    function displayTypeChart()
+  {
+  
+    document.getElementById("myChart5").style.display = "block";
+    document.getElementById("tester5").style.position = "absolute";
+    document.getElementById("tester5").style.width = "1100px";
+    document.getElementById("tester5").style.left = "9.5%";
+    document.getElementById("tester5").style.top = "4%";
+   document.getElementById("tester5").addEventListener('click',function ()
+   {
+    event.stopPropagation();
+      }  ); 
+  
+    //
+    document.getElementById("typeselectDiv").style.top = "4.1%";
+    document.getElementById("typeselectDiv").style.left = "8.4%";
+    document.getElementById("typeselectDiv").style.width = "200px";
+   document.getElementById("typeselectDiv").addEventListener('click',function ()
+   {
+    event.stopPropagation();
+      }  ); 
+      //
+     
+    }
+
+    // hide chart 5
+    $(document).ready(function(){
+  
+ 
+      $("#myChart5").click(function(){
+        $("#myChart5").hide();
+        $("html").removeClass("js no-touch cssanimations csstransitions no-scroll");
+        $("html").addClass("js no-touch cssanimations csstransitions");
+       
+      });
+     
+    
+     
       
-      );
+    });
+
+    async function getType() {
+  
+      var e = document.getElementById("typeSelect");
+   
+      
+        let query = e.options[e.selectedIndex].value;
+        
+
+        $.ajax({  
+          url:"typeStat",  
+          method:"GET",  
+          data:{query:query},
+          dataType:'JSON',  
+          success:function(data)  
+          {  console.log(data[0]['freelance']);
+           let y1=[];
+           let y2 = [];
+           let y3=[];
+           let y4=[];
+           for (var i=0;i<11;i++)
+           {
+             
+
+             y1.push(data[i]['cdd']);
+              y2.push(data[i]['cdi']);
+              y3.push(data[i]['stage']);
+              y4.push(data[i]['freelance']);
+
+
+           }
+           console.log(y4);
+           var trace1 = {
+            x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
+            y: y1,
+            type: 'bar'
+          };
+          var trace2 = {
+            x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
+            y: y2,
+            type: 'bar'
+          };
+          var trace3 = {
+            x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
+            y: y3,
+            type: 'bar'
+          };
+          var trace4 = {
+            x:['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'] ,
+            y: y4,
+            type: 'bar'
+          };
+
+          var d = [trace1, trace2,trace3,trace4];
+          var layout = {barmode: 'group'};
+          Plotly.newPlot('tester5', d, layout);
+           /* TESTER = document.getElementById('tester5');
+            Plotly.purge(TESTER);
+            // it workeeeeeeeeeeeed yey!
+              Plotly.plot( TESTER, [{
+                x: ['janvier','fevrier','mars','avril','may','juin','juillet','aout','septembre','octobre','novombre','decembre'],
+              y: d,
+              mode:'bar',
+                name:``,
+                line:{
+                color:'rgb(255, 7, 115)'
+              }
+                
+              }], {
+              title:`offre par moi` ,
+              yaxis:{title:``},
+              autosize: false,
+              width: 1100,
+              height: 500,
+              barmode:'group'
+              
+              
+            
+            } 
+              
+              );*/
+               
+          }  
+     }); 
+     
+        
     
     }

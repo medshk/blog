@@ -136,7 +136,7 @@ function () {
     
     return view('pages.candidate.candidate_view_profile');
 });
-
+Route::get('typeStat', 'RecruteurHomeController@getType')->name('typeStat');
 Route::get('offreStat', 'RecruteurHomeController@getOffre')->name('offreStat');
 Route::get('resume/{id}/editFormation', 'CvController@editFormation');
 Route::put('resume/{id}', 'CvController@updateFormation');
