@@ -18,16 +18,11 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-6">
-										<div class="skills-btn">
-											<a href="#" title="">Photoshop</a>
-											<a href="#" title="">Designers</a>
-											<a href="#" title="">Illustrator</a>
-										</div>
+										
 									</div>
 									<div class="col-lg-6">
 										<div class="action-inner">
-											<a href="#" title=""><i class="la la-paper-plane"></i>Save Resume</a>
-											<a href="#" title=""><i class="la la-envelope-o"></i>Contact David</a>
+										
 										</div>
 									</div>
 								</div>
@@ -49,7 +44,7 @@
 					<div class="col-lg-12">
 						<div class="cand-single-user">
 							<div class="share-bar circle">
-				 				<a href="#" title="" class="share-google"><i class="la la-google"></i></a><a href="#" title="" class="share-fb"><i class="fa fa-facebook"></i></a><a href="#" title="" class="share-twitter"><i class="fa fa-twitter"></i></a>
+				 				<a href="#" title="" class="share-google"><i class="la la-google"></i></a><a href="gmail.com" ><i class="fa fa-linkedin"></i></a><a href="#" title="" class="share-twitter"><i class="fa fa-twitter"></i></a>
 				 			</div>
 				 			<div class="can-detail-s">
 				 				<div class="cst"><img src="{{ asset('uploads/candidat/'.$candidat->photo)}}" alt="" /></div>
@@ -198,17 +193,7 @@
 							 				<li><i class="la la-line-chart "></i><h3>Niveau d'étude</h3><span>Bac+5</span></li>
 							 			</ul>
 							 		</div> --><!-- Job Overview -->
-							 		<div class="quick-form-job">
-							 			<h3>Contact</h3>
-							 			<form>
-							 				<input type="text" placeholder="Enter your Name *" />
-							 				<input type="text" placeholder="Email Address*" />
-							 				<input type="text" placeholder="Phone Number" />
-							 				<textarea placeholder="Message should have more than 50 characters"></textarea>
-							 				<button class="submit">Envoyer Email</button>
-							 				<span>You accepts our <a href="#" title="">Terms and Conditions</a></span>
-							 			</form>
-							 		</div>
+							 	
 						 		</div>
 
 					</div>

@@ -148,13 +148,15 @@
 	</div>
 	<div class="tree_widget-sec">
 		<ul>
+        <li><a href="{{url('candidat')}}" title=""><i class="fa fa-tachometer"></i>Dashboard</a></li>
+        <li><a href="{{url('resumevide')}}" title=""><i class="la la-file-text"></i>Crée Mon CV</a></li>
 			<li><a href="{{url('profil')}}" title=""><i class="la la-file-text"></i>Mon Profil</a></li>
             <li><a href="{{url('resume')}}" title=""><i class="la la-briefcase"></i>Mon Resumé</a></li>
-            <!-- <li><a href="{{route('logout')}}" title=""><i class="la la-unlink"></i>Logout</a></li> -->
+            
 			<li><a href="{{url('candidate/offres')}}" title=""><i class="la la-money"></i>Liste des Offres</a></li>
 			<li><a href="{{url('/listpost/'. auth::guard('candidate')->user()->id  )}}" title=""><i class="la la-paper-plane"></i>Mes Offres</a></li>
 			
-			<li><a href="{{url('resumevide')}}" title=""><i class="la la-file-text"></i>Crée Mon CV</a></li>
+			
 			<!-- <li><a href="candidates_change_password.html" title=""><i class="la la-flash"></i>Change Password</a></li> -->
        
 		</ul>
