@@ -78,7 +78,7 @@
 
 
     <div class="border-title"><h3>Experience</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
-   " 
+   
     <div class="resumeadd-form">
         <div class="row">
             <div class="col-lg-12">
@@ -113,7 +113,7 @@
             </div>
           
         </div>
-    </div>"
+    </div>
 
     <div class="border-title"><h3>Competences</h3><a class="cancel" href="#" title=""><i class="la la-close"></i> Cancel</a></div>
     <div class="resumeadd-form">

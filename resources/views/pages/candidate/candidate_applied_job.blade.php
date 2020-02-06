@@ -3,101 +3,43 @@
 @section('content')
 
 <div class="manage-jobs-sec">
-    <h3>Manage Jobs</h3>
+    <h3>Mes Offres</h3>
     <table>
         <thead>
             <tr>
-                <td>Applied Job</td>
-                <td>Position</td>
-                <td>Date</td>
+                <td>Offre</td>
+                <td>Domaine</td>
+               
                 <td></td>
             </tr>
         </thead>
+
+@foreach($offre as $of)
+@foreach($candidature as $can)
+
+@if($of->id == $can->idOffre)
+
         <tbody>
             <tr>
                 <td>
                     <div class="table-list-title">
-                        <i>Massimo Artemisis</i><br />
-                        <span><i class="la la-map-marker"></i>Sacramento, California</span>
+                        <i>{{$of->intitule}}</i><br />
+                        <span><i class="la la-map-marker"></i>{{$of->lieu_de_travail}}</span>
                     </div>
                 </td>
                 <td>
                     <div class="table-list-title">
-                        <h3><a href="#" title="">Web Designer / Developer</a></h3>
+                        <h3><a href="#" title="">{{$of->domaine}}</a></h3>
                     </div>
                 </td>
-                <td>
-                    <span>October 27, 2017</span><br />
-                </td>
-                <td>
-                    <ul class="action_job">
-                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                    </ul>
-                </td>
+               
+               
             </tr>
-            <tr>
-                <td>
-                    <div class="table-list-title">
-                        <i>StarHealth</i><br />
-                        <span><i class="la la-map-marker"></i>Rennes, France</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="table-list-title">
-                        <h3><a href="#" title="">Regional Sales Manager South east Asia</a></h3>
-                    </div>
-                </td>
-                <td>
-                    <span>October 27, 2017</span><br />
-                </td>
-                <td>
-                    <ul class="action_job">
-                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="table-list-title">
-                        <i>Altes Bank</i><br />
-                        <span><i class="la la-map-marker"></i>Istanbul, Turkey</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="table-list-title">
-                        <h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
-                    </div>
-                </td>
-                <td>
-                    <span>October 27, 2017</span><br />
-                </td>
-                <td>
-                    <ul class="action_job">
-                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="table-list-title">
-                        <i>MediaLab</i><br />
-                        <span><i class="la la-map-marker"></i>Ajax, Ontario</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="table-list-title">
-                        <h3><a href="#" title="">Marketing Director</a></h3>
-                    </div>
-                </td>
-                <td>
-                    <span>October 27, 2017</span><br />
-                </td>
-                <td>
-                    <ul class="action_job">
-                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                    </ul>
-                </td>
-            </tr>
+           
+           @endif 
+           @endforeach
+           @endforeach
+           
         </tbody>
     </table>
 </div>
