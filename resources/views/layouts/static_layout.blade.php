@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" />
 	<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-	<script src="{{asset('js/search_job.js')}}"></script>
+	<script src="{{asset('js/search_job.js?1500')}}"></script>
 	
 	<script src="{{asset('js/switching_forms.js?1500')}}" type="text/javascript"></script>
 	<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>

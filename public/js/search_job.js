@@ -1,29 +1,25 @@
 $(document).ready(function(){  
-    $('#kword').keyup(function(){  
-         var query = $(this).val();  
-         if(query=='')
-         {
-          $('#kWordList').fadeOut();  
-         }
+     $(document).on('click', '#ch',function(){  
+         var query = $('#kword1').val();  
+        
          if(query != '')  
          {  
               $.ajax({  
                    url:"getKeyWord",  
                    method:"GET",  
-                   data:{query:query},  
+                   data:{query:query}, 
+                   dataType:'JSON', 
                    success:function(data)  
                    {  
-                        console.log(data);
-                        $('#kWordList').fadeIn();  
-                        $('#kWordList').html(data);  
+                        console.log(data.table_data);
+                         
+                        $('#container').html(data.table_data);  
+                        $('#total').html(data.total_data);  
                    }  
               });  
          }  
     });  
-    $(document).on('click', '.dropdown-item', function(){  
-         $('#search_bar').prepend('<span>'+$(this).text()+'<i class="close-tag">x</i></span>');  
-         $('#kWordList').fadeOut();  
-    });  
+   
 
     //location
     $('#loc').keyup(function(){  
